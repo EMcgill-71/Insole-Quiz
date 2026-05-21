@@ -16,6 +16,12 @@ app.use(express.static(join(__dirname, '.'), {
     extensions: ['html'],
 }));
 
+// Serve the quiz at the root path — the HTML file has a space in its name
+// so Express static middleware won't find it as a default index.html.
+app.get('/', (_req, res) => {
+    res.sendFile(join(__dirname, 'Insole Quiz.html'));
+});
+
 // Health check for Railway.
 app.get('/healthz', (_req, res) => res.json({ ok: true }));
 
