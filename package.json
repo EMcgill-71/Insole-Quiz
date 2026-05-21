@@ -1,0 +1,17 @@
+{
+    "name": "insole-quiz",
+    "version": "1.0.0",
+    "description": "ZipFit Insole Quiz proof of concept.",
+    "private": true,
+    "main": "server.js",
+    "type": "module",
+    "engines": {
+          "node": ">=20"
+    },
+    "scripts": {
+          "start": "node server.js"
+    },
+    "dependencies": {
+          "express": "^4.21.2"
+    }
+}
