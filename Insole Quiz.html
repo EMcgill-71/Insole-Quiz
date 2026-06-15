@@ -1,1218 +1,1102 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<style data-omelette-injected>html,body{background:transparent}</style><script data-omelette-injected>(()=>{var j=[];var x=false;var S=30000;var f=3000;document.addEventListener("DOMContentLoaded",()=>{const H=window.Babel;const G="om-src-id";if(H&&H.registerPlugin&&!(H.availablePlugins&&H.availablePlugins[G])){H.registerPlugin(G,({types:Y})=>({visitor:{JSXOpeningElement(U,Q){const J=U.node;if(J.name&&J.name.type==="JSXMemberExpression")return;for(let V=0;V<J.attributes.length;V++){const L=J.attributes[V];if(L.type==="JSXAttribute"&&L.name&&L.name.name==="data-om-id")return}const W=Q.file&&Q.file.opts&&Q.file.opts.filename||"?";const Z=J.loc&&J.loc.start;const z=`jsx:${W}:${J.start??0}:${Z?Z.line:0}:${Z?Z.column+1:0}`;J.attributes.push(Y.jsxAttribute(Y.jsxIdentifier("data-om-id"),Y.stringLiteral(z)))}}}))}const k="om-text-extract";let A=false;if(x&&H&&H.registerPlugin&&!(H.availablePlugins&&H.availablePlugins[k])){const Y=window.React;if(Y&&Y.useSyncExternalStore&&Y.createElement){A=true;const U={};const Q=new Set;let J=0;window.__omTextO=U;window.__omTextSet=(z)=>{for(const V in z){const L=z[V];if(L==null)delete U[V];else U[V]=L}J++;Q.forEach((V)=>V())};const W=(z)=>{Q.add(z);return()=>Q.delete(z)};const Z=()=>J;window.__OmT=function z(V){Y.useSyncExternalStore(W,Z,Z);return Y.createElement("span",{"data-om-text":V.i,className:"__om-t"},V.i in U?U[V.i]:V.children)};H.registerPlugin(k,({types:z})=>{const V={style:1,script:1,noscript:1,textarea:1,title:1,option:1,text:1,tspan:1,textPath:1};const L={placeholder:1,alt:1,title:1,label:1,"aria-label":1,"aria-description":1,"aria-placeholder":1};const _=($,C)=>z.logicalExpression("??",z.memberExpression(z.logicalExpression("||",z.memberExpression(z.identifier("window"),z.identifier("__omTextO")),z.objectExpression([])),z.stringLiteral($),true),C);const E=($)=>$.file&&$.file.opts&&$.file.opts.filename||"?";const B=($)=>$.file&&$.file.code||"";const b=($,C)=>{const X=(F)=>F&&F.start!=null&&F.end!=null&&(F.type==="StringLiteral"||F.type==="TemplateLiteral"&&F.expressions.length===0)?[F.start,F.end]:null;const N=X(C);if(N)return N;if(C&&C.type==="Identifier"){const F=$.scope.getBinding(C.name);if(F&&F.constant&&F.path.node.type==="VariableDeclarator"){return X(F.path.node.init)}}return null};const M=($,C,X)=>{const N=$.node;let F=false;const w=(K,q)=>{F=true;return z.jsxElement(z.jsxOpeningElement(z.jsxIdentifier("__OmT"),[z.jsxAttribute(z.jsxIdentifier("i"),z.stringLiteral(K))],false),z.jsxClosingElement(z.jsxIdentifier("__OmT")),[q],false)};const D=N.children.map((K)=>{if(K.type==="JSXText"){if(K.start==null||K.end==null)return K;const q=X.slice(K.start,K.end);const R=q.length-q.trimStart().length;const m=q.length-q.trimEnd().length;if(R+m>=q.length)return K;return w(`txt:${C}:${K.start+R}:${K.end-m}`,K)}if(K.type==="JSXExpressionContainer"){const q=b($,K.expression);if(q)return w(`str:${C}:${q[0]}:${q[1]}`,K)}return K});if(F)N.children=D};return{visitor:{JSXOpeningElement($,C){const X=$.node;const N=E(C);const F={};for(let w=0;w<X.attributes.length;w++){const D=X.attributes[w];if(D.type!=="JSXAttribute"||!D.name)continue;const K=D.name.name;if(!L[K])continue;if(!D.value||D.value.type!=="StringLiteral")continue;if(D.value.start==null||D.value.end==null)continue;const q=`txt:${N}:${D.value.start}:${D.value.end}`;F[K]=q;D.value=z.jsxExpressionContainer(_(q,z.stringLiteral(D.value.value)))}if(Object.keys(F).length){X.attributes.push(z.jsxAttribute(z.jsxIdentifier("data-om-text-attrs"),z.stringLiteral(JSON.stringify(F))))}},JSXElement($,C){const X=$.node.openingElement;const N=X&&X.name&&X.name.name;if(N==="__OmT")return;if(typeof N==="string"&&V[N])return;M($,E(C),B(C))},JSXFragment($,C){M($,E(C),B(C))}}}})}}const u=A?["transform-react-jsx-source",G,k]:["transform-react-jsx-source",G];document.querySelectorAll('script[type="text/babel"],script[type="text/jsx"]').forEach((Y,U)=>{const Q=Y.getAttribute("data-plugins")||"";const J=u.filter((W)=>Q.indexOf(W)<0);if(J.length){Y.setAttribute("data-plugins",Q?`${Q},${J.join(",")}`:J.join(","))}if(!Y.hasAttribute("data-filename")){Y.setAttribute("data-filename",Y.getAttribute("src")||`inline-${U}`)}})});var y=window.parent;if(y&&y!==window){const H=(Q,J)=>{try{y.postMessage({__omelette_log:true,type:Q,data:J},"*")}catch{}};["log","warn","error"].forEach((Q)=>{const J=console[Q];console[Q]=(...W)=>{const Z=W.map((z)=>{try{return typeof z==="object"?JSON.stringify(z):String(z)}catch{try{return String(z)}catch{return"[unstringifiable]"}}}).join(" ");H(Q,Z);J.apply(console,W)}});window.addEventListener("error",(Q)=>{const J=Q.target;if(J&&J!==window&&J.tagName){const W=J.src||J.href||"";H("resource_error",`${J.tagName} failed to load: ${W}`)}else{H("error",`${Q.message||"Unknown error"} at ${Q.filename||"?"}:${Q.lineno||0}:${Q.colno||0}`)}},true);window.addEventListener("unhandledrejection",(Q)=>{const J=Q.reason;const W=J instanceof Error?`${J.message} ${J.stack}`:String(J);H("error",`Unhandled rejection: ${W}`)});const G=()=>{try{y.postMessage({type:"omelette:height",height:document.documentElement.scrollHeight},"*")}catch{}};if(document.readyState==="complete")G();else window.addEventListener("load",G);if(window.ResizeObserver)new ResizeObserver(G).observe(document.documentElement);const k={};let A=0;window.claude={complete(Q){return new Promise((J,W)=>{if(!j.length){W(new Error("claude.complete: no parent origin"));return}const Z=`c${++A}`;const z=()=>setTimeout(()=>{delete k[Z];W(new Error(`claude.complete: no data for ${S/1000}s`))},S);const V=z();k[Z]={resolve:J,reject:W,text:"",t:V,arm:z};try{for(const L of j){y.postMessage({__om_api:true,id:Z,body:Q},L)}}catch(L){clearTimeout(V);delete k[Z];W(L)}})}};const u={};let Y=0;window.omelette={writeFile:(Q,J)=>new Promise((W,Z)=>{if(!j.length){W();return}const z=`f${++Y}`;const V=setTimeout(()=>{delete u[z];W()},f);u[z]={resolve:W,reject:Z,t:V};try{for(const L of j){y.postMessage({__om_file:true,id:z,op:"write",path:Q,content:J},L)}}catch{clearTimeout(V);delete u[z];W()}})};const U=(Q)=>{try{return JSON.stringify(Q)}catch{return JSON.stringify(String(Q))}};window.addEventListener("message",(Q)=>{if(j.indexOf(Q.origin)<0)return;if(Q.source!==y)return;const J=Q.data;if(!J)return;if(J.type==="omelette-preview-refresh"){if(typeof J.token!=="string"||!/^[0-9a-f.-]+(\.(rc|pr-[0-9]+))?$/.test(J.token))return;const z=Math.max(1,Math.floor((J.expiresAt||0)-Date.now()/1000));document.cookie="__Host-omelette-preview="+J.token+"; Path=/; Secure; SameSite=None; Partitioned; Max-Age="+z;return}if(J.__om_file_r){const z=u[J.id];if(!z)return;clearTimeout(z.t);delete u[J.id];if(J.ok)z.resolve();else z.reject(new Error(J.error||"write failed"));return}if(J.__om_api_r){const z=k[J.id];if(!z)return;if(J.error!=null){clearTimeout(z.t);delete k[J.id];z.reject(new Error(J.error));return}if(J.chunk!=null){clearTimeout(z.t);z.t=z.arm();z.text+=J.chunk;return}if(J.done){clearTimeout(z.t);delete k[J.id];z.resolve(J.text!=null?J.text:z.text);return}return}if(!J.__om_eval)return;const W=J;const Z=(z)=>{Q.source.postMessage({...z,__om_eval_r:1,id:W.id},Q.origin)};try{const z=(0,eval)(W.code);if(z&&typeof z.then==="function"){z.then((V)=>Z({ok:1,v:U(V)}),(V)=>Z({ok:0,e:String(V)}))}else{Z({ok:1,v:U(z)})}}catch(z){Z({ok:0,e:String(z)})}})}})();
-</script>
-
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Find My Fit — ZipFit Insoles</title>
+<title>Find Your Perfect Insole — ZipFit</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <!--
   ============================================================
-  ZipFit Insole Finder — drop-in Shopify quiz
+  ZipFit Insole Finder — Shopify-embeddable quiz
   ============================================================
-  Integration notes:
+  Integration: paste <style>, <body>, and <script> into a
+  Shopify section (sections/insole-quiz.liquid). All selectors
+  are scoped to .zfq-* so there are no collisions.
 
-  1. To embed in a Shopify section/snippet, paste the contents
-     of <style>, <body>, and <script> into a section template
-     (e.g. sections/insole-quiz.liquid). The widget is fully
-     self-scoped under .zf-quiz.
-
-  2. Replace product URLs + handles in the PRODUCTS map below
-     with Shopify product handles. The "Shop" button uses
-     /products/{handle} so it works inside any storefront.
-
-  3. To use a Shopify "Add to cart" instead of a product link,
-     swap the <a class="zf-shop"> with a form posting to
-     /cart/add with the product's variant ID. The recommend()
-     function returns the matched product id — surface it in
-     a hidden input.
-
-  4. Fonts: Outfit + Inter are loaded from Google Fonts. In a
-     Shopify build, use {{ 'outfit' | global_asset_url | font_face }}
-     or self-host. The widget falls back to system sans cleanly.
-
-  5. The quiz emits a CustomEvent('zf:recommend', { detail: {...} })
-     on the document when a recommendation is shown — wire this
-     to your analytics (Klaviyo, GA4, etc.).
+  Replace product handles and SHOPIFY_BASE_URL before going live.
+  The quiz emits CustomEvent('zf:recommend', { detail: {...} })
+  on document for analytics wiring (Klaviyo, GA4, etc.).
   ============================================================
 -->
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-
 <style>
-  /* --------- Local tokens (mirrors ZipFit design system) --------- */
-  .zf-quiz {
-    --zf-red:#EF4623;
-    --zf-red-dark:#C8371A;
-    --zf-black:#272727;
-    --zf-white:#FFFFFF;
-    --zf-bg:#F1EDE7;
-    --zf-bg-deep:#E8E2D9;
-    --zf-yellow:#FBCF21;
-    --zf-green:#68BD46;
-    --zf-aqua:#5DC7D1;
-    --zf-blue:#2F438F;
-    --zf-purple:#952A7D;
-    --zf-rainbow:linear-gradient(90deg,#EF4623 0%,#FBCF21 20%,#68BD46 40%,#5DC7D1 60%,#2F438F 80%,#952A7D 100%);
-    --border:rgba(39,39,39,0.12);
-    --border-strong:rgba(39,39,39,0.22);
-    --fg-2:#4A4A4A;
-    --fg-3:#7A7670;
-    --ease:cubic-bezier(0.2,0.7,0.2,1);
+/* ── reset ─────────────────────────────────────────────── */
+*,*::before,*::after{box-sizing:border-box}
+html,body{margin:0;padding:0}
+button{font-family:inherit;cursor:pointer}
 
-    font-family:'Inter',system-ui,-apple-system,sans-serif;
-    color:var(--zf-black);
-    -webkit-font-smoothing:antialiased;
-    line-height:1.5;
-  }
+/* ── page ───────────────────────────────────────────────── */
+body{
+  background:#d4ede8;
+  font-family:'Inter',system-ui,-apple-system,sans-serif;
+  -webkit-font-smoothing:antialiased;
+  min-height:100vh;
+  display:flex;
+  align-items:flex-start;
+  justify-content:center;
+  padding:24px 16px 48px;
+}
 
-  /* ------- Base reset, scoped ------- */
-  .zf-quiz *,.zf-quiz *::before,.zf-quiz *::after{box-sizing:border-box}
-  .zf-quiz button{font-family:inherit;color:inherit;cursor:pointer}
+/* ── card shell ─────────────────────────────────────────── */
+.zfq-card{
+  background:#fff;
+  border-radius:20px;
+  width:100%;
+  max-width:540px;
+  box-shadow:0 8px 48px rgba(0,0,0,0.10);
+  overflow:hidden;
+  position:relative;
+}
 
-  /* ------- Page wash ------- */
-  body{margin:0;background:#F1EDE7;font-family:'Inter',system-ui,sans-serif}
+/* ── top bar ────────────────────────────────────────────── */
+.zfq-topbar{
+  display:flex;
+  align-items:center;
+  padding:16px 20px;
+  border-bottom:1px solid #f0f0f0;
+}
+.zfq-logo{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  font-weight:700;
+  font-size:18px;
+  letter-spacing:-0.3px;
+  color:#1a1a1a;
+  text-decoration:none;
+}
+.zfq-logo sup{font-size:10px;vertical-align:super}
+.zfq-close{
+  margin-left:auto;
+  background:none;
+  border:none;
+  width:32px;
+  height:32px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#999;
+  transition:background .15s,color .15s;
+}
+.zfq-close:hover{background:#f5f5f5;color:#1a1a1a}
+.zfq-close svg{width:16px;height:16px;stroke:currentColor;stroke-width:2;stroke-linecap:round;fill:none}
 
-  /* ------- Wrapper ------- */
-  .zf-quiz{
-    max-width:560px;
-    margin:0 auto;
-    padding:32px 20px 48px;
-    min-height:100vh;
-    display:flex;
-    flex-direction:column;
-  }
+/* ── progress area ──────────────────────────────────────── */
+.zfq-progress-area{
+  padding:14px 20px 12px;
+  background:#fafafa;
+  border-bottom:1px solid #f0f0f0;
+}
 
-  /* ------- Header ------- */
-  .zf-head{display:flex;align-items:center;gap:10px;margin-bottom:28px}
-  .zf-mark{
-    font-family:'Outfit',sans-serif;font-weight:900;font-size:18px;
-    letter-spacing:-0.02em;text-transform:uppercase;color:var(--zf-black);
-    display:flex;align-items:center;gap:8px;
-  }
-  .zf-mark svg{display:block}
-  .zf-mark .reg{font-size:9px;font-weight:600;vertical-align:super;letter-spacing:0;margin-left:1px}
-  .zf-pill{
-    margin-left:auto;
-    font-family:'Inter',sans-serif;font-weight:600;
-    font-size:10px;letter-spacing:0.14em;text-transform:uppercase;
-    color:var(--fg-2);
-    padding:5px 10px;border:1px solid var(--border);border-radius:999px;
-    background:rgba(255,255,255,0.5);
-  }
+/* walking foot */
+.zfq-foot-track{
+  position:relative;
+  height:30px;
+  margin-bottom:8px;
+}
+.zfq-foot-track-bg{
+  position:absolute;
+  top:50%;left:4px;right:4px;height:3px;
+  transform:translateY(-50%);
+  background:#e8e8e8;
+  border-radius:999px;
+}
+.zfq-foot-trail{
+  position:absolute;
+  top:50%;left:4px;height:3px;
+  transform:translateY(-50%);
+  background:linear-gradient(90deg,#5bc4b0,#3aab95);
+  border-radius:999px;
+  width:0%;
+  transition:width .55s cubic-bezier(.4,0,.2,1);
+}
+.zfq-foot-walker{
+  position:absolute;
+  top:50%;
+  left:0%;
+  transform:translate(-50%,-50%);
+  transition:left .55s cubic-bezier(.4,0,.2,1);
+  animation:zfqBounce .7s ease-in-out infinite alternate;
+  color:#3aab95;
+}
+@keyframes zfqBounce{
+  from{transform:translate(-50%,-50%) rotate(-10deg)}
+  to{transform:translate(-50%,-56%) rotate(10deg)}
+}
+.zfq-foot-walker svg{
+  width:22px;height:22px;
+  stroke:currentColor;stroke-width:1.5;
+  stroke-linecap:round;stroke-linejoin:round;fill:none;
+  display:block;
+}
 
-  /* ------- Intro block ------- */
-  .zf-intro{margin-bottom:24px}
-  .zf-eyebrow{
-    font-size:11px;font-weight:600;letter-spacing:0.16em;
-    text-transform:uppercase;color:var(--fg-2);margin-bottom:10px;
-    display:flex;align-items:center;gap:8px;
-  }
-  .zf-eyebrow .bar{
-    flex:1;height:1px;background:var(--border);max-width:80px;
-  }
-  .zf-title{
-    font-family:'Outfit',sans-serif;font-weight:800;
-    font-size:clamp(34px,8vw,44px);
-    line-height:0.96;letter-spacing:-0.02em;text-transform:uppercase;
-    margin:0 0 8px;color:var(--zf-black);
-  }
-  .zf-sub{
-    font-size:15px;color:var(--fg-2);line-height:1.45;margin:0;
-    max-width:42ch;
-  }
+.zfq-progress-label{
+  font-size:12px;
+  color:#888;
+  text-align:center;
+  font-weight:500;
+}
 
-  /* ------- Progress ------- */
-  .zf-progress{
-    margin:24px 0 28px;
-    display:flex;align-items:center;gap:14px;
-  }
-  .zf-progress-track{
-    flex:1;height:3px;background:var(--border);border-radius:999px;overflow:hidden;
-    position:relative;
-  }
-  .zf-progress-fill{
-    position:absolute;inset:0 auto 0 0;width:0%;
-    background:var(--zf-rainbow);border-radius:999px;
-    transition:width .6s var(--ease);
-  }
-  .zf-progress-count{
-    font-family:'Inter',sans-serif;font-weight:600;
-    font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--fg-2);
-    font-variant-numeric:tabular-nums;
-    min-width:54px;text-align:right;
-  }
+/* ── body ───────────────────────────────────────────────── */
+.zfq-body{
+  padding:24px 20px 28px;
+}
 
-  /* ------- Question stage ------- */
-  .zf-stage{flex:1}
-  .zf-q-label{
-    font-family:'Inter',sans-serif;font-weight:600;
-    font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:var(--zf-red);
-    margin-bottom:12px;
-  }
-  .zf-q-text{
-    font-family:'Outfit',sans-serif;font-weight:800;
-    font-size:clamp(24px,5.5vw,30px);
-    line-height:1.08;letter-spacing:-0.015em;text-transform:uppercase;
-    color:var(--zf-black);margin:0 0 22px;
-  }
+/* ── step transition ─────────────────────────────────────── */
+.zfq-step-wrap{
+  animation:zfqStepIn .3s cubic-bezier(.4,0,.2,1);
+}
+@keyframes zfqStepIn{
+  from{opacity:0;transform:translateX(14px)}
+  to{opacity:1;transform:translateX(0)}
+}
 
-  /* ------- Options ------- */
-  .zf-options{display:flex;flex-direction:column;gap:10px}
+/* ── question header ─────────────────────────────────────── */
+.zfq-qlabel{
+  font-size:11px;
+  font-weight:600;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  color:#3aab95;
+  margin-bottom:10px;
+}
+.zfq-qtitle{
+  font-size:22px;
+  font-weight:700;
+  color:#1a1a1a;
+  line-height:1.22;
+  margin:0 0 6px;
+}
+.zfq-qsub{
+  font-size:13px;
+  color:#888;
+  margin:0 0 18px;
+}
 
-  /* ------- Size step (measure insole in cm) ------- */
-  .zf-size-wrap{
-    background:var(--zf-white);
-    border:1px solid var(--border);
-    border-radius:14px;
-    padding:18px 18px 20px;
-  }
+/* ── option grid layouts ─────────────────────────────────── */
+.zfq-opts{
+  display:grid;
+  gap:10px;
+}
+.zfq-opts.g2{grid-template-columns:1fr 1fr}
+.zfq-opts.g1{grid-template-columns:1fr}
+.zfq-opts.g3{grid-template-columns:1fr 1fr 1fr}
 
-  .zf-measure-illus{
-    background:var(--zf-bg);
-    border-radius:10px;
-    padding:16px 18px;
-    margin-bottom:18px;
-    display:flex;align-items:center;gap:14px;
-  }
-  .zf-measure-illus svg{flex-shrink:0;width:96px;height:auto;display:block}
-  .zf-measure-illus .zf-measure-text{
-    flex:1;min-width:0;
-  }
-  .zf-measure-illus .zf-measure-text b{
-    display:block;
-    font-family:'Outfit',sans-serif;font-weight:700;
-    font-size:13px;letter-spacing:-0.005em;text-transform:uppercase;
-    color:var(--zf-black);margin-bottom:4px;
-  }
-  .zf-measure-illus .zf-measure-text span{
-    font-size:12.5px;color:var(--fg-2);line-height:1.4;
-  }
+/* ── option card ─────────────────────────────────────────── */
+.zfq-opt{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  text-align:center;
+  gap:8px;
+  padding:14px 10px 13px;
+  background:#fff;
+  border:1.5px solid #e8e8e8;
+  border-radius:12px;
+  transition:border-color .15s,box-shadow .15s,transform .1s;
+  -webkit-tap-highlight-color:transparent;
+  min-height:76px;
+}
+.zfq-opt:hover{border-color:#bbb}
+.zfq-opt.sel{
+  border-color:#1a1a1a;
+  box-shadow:0 0 0 1px #1a1a1a;
+  background:#f7fffd;
+}
+.zfq-opt:active{transform:scale(.97)}
 
-  .zf-readout{
-    display:flex;align-items:flex-end;justify-content:space-between;gap:16px;
-    margin-bottom:12px;
-  }
-  .zf-readout-cm{
-    font-family:'Outfit',sans-serif;font-weight:900;
-    font-size:54px;line-height:0.95;letter-spacing:-0.03em;color:var(--zf-black);
-    font-variant-numeric:tabular-nums;
-  }
-  .zf-readout-cm .unit{
-    font-size:18px;font-weight:700;color:var(--fg-3);letter-spacing:0.02em;
-    margin-left:6px;text-transform:lowercase;
-  }
-  .zf-readout-size{
-    text-align:right;
-  }
-  .zf-readout-size .lbl{
-    font-family:'Inter',sans-serif;font-weight:600;
-    font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:var(--fg-3);
-    margin-bottom:4px;
-  }
-  .zf-readout-size .val{
-    font-family:'Outfit',sans-serif;font-weight:800;
-    font-size:20px;letter-spacing:-0.01em;text-transform:uppercase;color:var(--zf-black);
-  }
-  .zf-readout-size .val .us{display:block;font-size:11px;color:var(--fg-3);font-weight:600;letter-spacing:0.04em;margin-top:3px;text-transform:none}
+/* list-style variant */
+.zfq-opt.row{
+  flex-direction:row;
+  text-align:left;
+  gap:12px;
+  padding:12px 14px;
+  min-height:52px;
+}
 
-  .zf-stepper{
-    display:flex;align-items:stretch;gap:10px;
-    margin-bottom:14px;
-  }
-  .zf-step-btn{
-    appearance:none;
-    width:48px;height:48px;flex-shrink:0;
-    border:1px solid var(--border);
-    background:var(--zf-white);
-    border-radius:10px;
-    display:flex;align-items:center;justify-content:center;
-    transition:border-color .12s var(--ease),background .12s var(--ease),transform .1s var(--ease);
-  }
-  .zf-step-btn:hover{border-color:var(--border-strong)}
-  .zf-step-btn:active{transform:translateY(1px)}
-  .zf-step-btn svg{width:16px;height:16px;stroke:var(--zf-black);stroke-width:2.5;fill:none;stroke-linecap:round;stroke-linejoin:round}
+/* pain-grid small cards */
+.zfq-opts.g3 .zfq-opt{
+  padding:10px 6px 9px;
+  min-height:62px;
+  gap:6px;
+}
 
-  .zf-slider-wrap{
-    flex:1;
-    position:relative;
-    display:flex;align-items:center;
-    padding:0 4px;
-  }
-  .zf-slider{
-    appearance:none;-webkit-appearance:none;
-    width:100%;height:6px;
-    background:transparent;
-    margin:0;
-  }
-  .zf-slider-track{
-    position:absolute;left:4px;right:4px;top:50%;height:6px;
-    transform:translateY(-50%);
-    background:var(--border);
-    border-radius:999px;
-    overflow:hidden;
-  }
-  .zf-slider-fill{
-    position:absolute;inset:0 auto 0 0;width:0%;
-    background:var(--zf-rainbow);
-    border-radius:999px;
-  }
-  .zf-slider::-webkit-slider-thumb{
-    -webkit-appearance:none;
-    appearance:none;
-    width:24px;height:24px;border-radius:50%;
-    background:var(--zf-white);
-    border:2px solid var(--zf-black);
-    box-shadow:0 2px 6px rgba(39,39,39,0.18);
-    cursor:grab;
-    position:relative;z-index:1;
-  }
-  .zf-slider::-webkit-slider-thumb:active{cursor:grabbing;background:var(--zf-black)}
-  .zf-slider::-moz-range-thumb{
-    width:24px;height:24px;border-radius:50%;
-    background:var(--zf-white);
-    border:2px solid var(--zf-black);
-    box-shadow:0 2px 6px rgba(39,39,39,0.18);
-    cursor:grab;
-  }
-  .zf-slider:focus{outline:none}
-  .zf-slider:focus::-webkit-slider-thumb{box-shadow:0 0 0 4px rgba(239,70,35,0.25),0 2px 6px rgba(39,39,39,0.18)}
+/* icon container */
+.zfq-opt-icon{
+  flex-shrink:0;
+  width:36px;height:36px;
+  display:flex;align-items:center;justify-content:center;
+  color:#1a1a1a;
+}
+.zfq-opt-icon svg{
+  width:22px;height:22px;
+  stroke:currentColor;stroke-width:1.75;
+  stroke-linecap:round;stroke-linejoin:round;fill:none;
+  display:block;
+}
+.zfq-opts.g3 .zfq-opt-icon{width:26px;height:26px}
+.zfq-opts.g3 .zfq-opt-icon svg{width:18px;height:18px}
 
-  .zf-slider-ticks{
-    display:flex;justify-content:space-between;
-    margin-top:8px;padding:0 4px;
-    font-family:'Inter',sans-serif;font-weight:500;
-    font-size:10px;letter-spacing:0.06em;color:var(--fg-3);
-    font-variant-numeric:tabular-nums;
-  }
+/* row variant: icon has a pill bg */
+.zfq-opt.row .zfq-opt-icon{
+  background:#f4f4f4;
+  border-radius:8px;
+  transition:background .15s,color .15s;
+}
+.zfq-opt.row.sel .zfq-opt-icon{background:#1a1a1a;color:#fff}
 
-  .zf-size-help{
-    margin-top:14px;
-    font-size:12px;color:var(--fg-3);line-height:1.45;
-  }
-  .zf-size-help b{color:var(--fg-2);font-weight:600}
+/* text */
+.zfq-opt-body{display:flex;flex-direction:column;flex:1;min-width:0}
+.zfq-opt-label{
+  font-size:13px;
+  font-weight:600;
+  color:#1a1a1a;
+  line-height:1.25;
+}
+.zfq-opts.g3 .zfq-opt-label{font-size:11px}
+.zfq-opt.row .zfq-opt-label{font-size:14px}
+.zfq-opt-desc{
+  font-size:11.5px;
+  color:#888;
+  margin-top:3px;
+  line-height:1.3;
+}
 
-  /* Recommended size pill on result */
-  .zf-size-line{
-    display:flex;align-items:center;gap:10px;flex-wrap:wrap;
-    padding:14px 24px 0;
-  }
-  .zf-size-line .zf-size-pill{
-    display:inline-flex;align-items:baseline;gap:6px;
-    background:var(--zf-bg);
-    border:1px solid var(--border);
-    border-radius:999px;
-    padding:6px 12px;
-    font-family:'Outfit',sans-serif;font-weight:800;font-size:14px;
-    letter-spacing:-0.005em;text-transform:uppercase;
-    color:var(--zf-black);
-  }
-  .zf-size-line .zf-size-pill small{font-size:10px;font-weight:600;letter-spacing:0.1em;color:var(--fg-3);text-transform:uppercase}
-  .zf-size-line .your-size{
-    font-family:'Inter',sans-serif;font-weight:500;font-size:12px;color:var(--fg-2);
-    letter-spacing:0.04em;
-  }
-  .zf-opt{
-    display:flex;align-items:center;gap:14px;
-    padding:16px 18px;
-    border:1px solid var(--border);border-radius:14px;
-    background:var(--zf-white);
-    text-align:left;width:100%;
-    transition:border-color .15s var(--ease),background .15s var(--ease),transform .15s var(--ease);
-    position:relative;
-  }
-  .zf-opt:hover{border-color:var(--border-strong)}
-  .zf-opt:active{transform:translateY(1px)}
-  .zf-opt.selected{
-    border-color:var(--zf-black);
-    background:var(--zf-white);
-    box-shadow:inset 0 0 0 1px var(--zf-black);
-  }
-  .zf-opt-icon{
-    width:44px;height:44px;flex-shrink:0;
-    display:flex;align-items:center;justify-content:center;
-    border-radius:10px;background:var(--zf-bg);
-    color:var(--zf-black);
-    transition:background .15s var(--ease),color .15s var(--ease);
-  }
-  .zf-opt.selected .zf-opt-icon{background:var(--zf-black);color:var(--zf-white)}
-  .zf-opt-icon svg{width:22px;height:22px;stroke-width:1.75}
-  .zf-opt-text{display:flex;flex-direction:column;flex:1;min-width:0}
-  .zf-opt-title{
-    font-family:'Outfit',sans-serif;font-weight:700;
-    font-size:15px;letter-spacing:-0.005em;text-transform:uppercase;
-    color:var(--zf-black);line-height:1.1;
-  }
-  .zf-opt-desc{
-    font-size:13px;color:var(--fg-2);margin-top:4px;line-height:1.35;
-  }
-  .zf-opt-check{
-    width:22px;height:22px;flex-shrink:0;border-radius:50%;
-    border:1.5px solid var(--border-strong);
-    display:flex;align-items:center;justify-content:center;
-    transition:border-color .15s var(--ease),background .15s var(--ease);
-  }
-  .zf-opt-check svg{width:14px;height:14px;stroke-width:2.5;opacity:0;transition:opacity .15s var(--ease);color:var(--zf-white)}
-  .zf-opt.selected .zf-opt-check{background:var(--zf-black);border-color:var(--zf-black)}
-  .zf-opt.selected .zf-opt-check svg{opacity:1}
+/* ── actions ─────────────────────────────────────────────── */
+.zfq-actions{
+  display:flex;
+  gap:10px;
+  margin-top:20px;
+}
+.zfq-btn-next{
+  flex:1;
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  padding:13px 22px;
+  background:#f5c842;
+  color:#1a1a1a;
+  border:none;
+  border-radius:10px;
+  font-size:14px;
+  font-weight:700;
+  letter-spacing:.01em;
+  transition:opacity .15s,transform .1s;
+}
+.zfq-btn-next:disabled{opacity:.35;cursor:not-allowed}
+.zfq-btn-next:not(:disabled):hover{opacity:.88}
+.zfq-btn-next:not(:disabled):active{transform:scale(.98)}
+.zfq-btn-next svg{width:16px;height:16px;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;fill:none}
 
-  /* ------- Button row ------- */
-  .zf-actions{
-    display:flex;gap:10px;margin-top:24px;
-  }
-  .zf-btn{
-    flex:1;
-    display:inline-flex;align-items:center;justify-content:center;gap:8px;
-    font-family:'Inter',sans-serif;font-weight:600;
-    font-size:13px;letter-spacing:0.08em;text-transform:uppercase;
-    padding:15px 22px;border-radius:4px;border:1.5px solid transparent;
-    background:var(--zf-red);color:var(--zf-white);
-    transition:background .15s var(--ease),transform .1s var(--ease);
-    text-decoration:none;
-  }
-  .zf-btn:hover{background:var(--zf-red-dark)}
-  .zf-btn:active{transform:translateY(1px)}
-  .zf-btn:disabled{opacity:0.35;pointer-events:none}
-  .zf-btn--secondary{
-    background:transparent;color:var(--zf-black);border-color:var(--zf-black);
-    flex:0 0 auto;padding:15px 18px;
-  }
-  .zf-btn--secondary:hover{background:var(--zf-black);color:var(--zf-white)}
-  .zf-btn svg{width:14px;height:14px;stroke-width:2.5}
+.zfq-btn-back{
+  display:inline-flex;align-items:center;gap:6px;
+  padding:13px 16px;
+  background:none;
+  border:1.5px solid #ddd;
+  border-radius:10px;
+  font-size:14px;
+  font-weight:600;
+  color:#666;
+  transition:border-color .15s,color .15s,background .15s;
+}
+.zfq-btn-back:hover{border-color:#999;color:#1a1a1a;background:#f9f9f9}
+.zfq-btn-back svg{width:16px;height:16px;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;fill:none}
 
-  /* ------- Transitions ------- */
-  .zf-fade-enter{
-    animation:zfFadeIn .35s var(--ease);
-  }
-  @keyframes zfFadeIn{
-    from{opacity:0;transform:translateY(8px)}
-    to{opacity:1;transform:translateY(0)}
-  }
+/* ── email step ──────────────────────────────────────────── */
+.zfq-email-wrap{text-align:center}
+.zfq-email-badge{
+  display:inline-flex;align-items:center;gap:6px;
+  background:#fff8d6;
+  border:1px solid #f5c842;
+  color:#7a5f00;
+  font-size:12px;
+  font-weight:600;
+  padding:5px 13px;
+  border-radius:999px;
+  margin-bottom:16px;
+}
+.zfq-email-badge svg{width:14px;height:14px;stroke:currentColor;stroke-width:2;fill:none;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
+.zfq-email-input{
+  width:100%;
+  padding:12px 16px;
+  border:1.5px solid #e8e8e8;
+  border-radius:10px;
+  font-size:15px;
+  font-family:inherit;
+  color:#1a1a1a;
+  margin:14px 0 10px;
+  transition:border-color .15s;
+}
+.zfq-email-input:focus{outline:none;border-color:#3aab95}
+.zfq-btn-email{
+  width:100%;
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  padding:13px 22px;
+  background:#f5c842;
+  color:#1a1a1a;
+  border:none;
+  border-radius:10px;
+  font-size:14px;
+  font-weight:700;
+  margin-bottom:14px;
+  transition:opacity .15s;
+}
+.zfq-btn-email:hover{opacity:.88}
+.zfq-btn-email svg{width:16px;height:16px;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;fill:none}
+.zfq-skip{
+  display:block;
+  color:#888;
+  font-size:13px;
+  cursor:pointer;
+  text-decoration:underline;
+  margin-top:4px;
+  background:none;
+  border:none;
+  width:100%;
+  text-align:center;
+  padding:6px 0;
+}
+.zfq-skip:hover{color:#555}
 
-  /* ====================================================== */
-  /* RESULT PAGE                                            */
-  /* ====================================================== */
-  .zf-result{
-    animation:zfFadeIn .45s var(--ease);
-  }
-  .zf-result-eyebrow{
-    display:flex;align-items:center;gap:8px;
-    font-family:'Inter',sans-serif;font-weight:600;
-    font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:var(--zf-red);
-    margin-bottom:14px;
-  }
-  .zf-result-eyebrow .dot{
-    width:6px;height:6px;border-radius:50%;background:var(--zf-red);
-    box-shadow:0 0 0 4px rgba(239,70,35,0.18);
-  }
+/* ── result page ─────────────────────────────────────────── */
+.zfq-result-eyebrow{
+  display:flex;align-items:center;gap:8px;
+  font-size:11px;font-weight:600;
+  letter-spacing:.1em;text-transform:uppercase;
+  color:#3aab95;
+  margin-bottom:12px;
+}
+.zfq-result-eyebrow .dot{
+  width:7px;height:7px;border-radius:50%;
+  background:#3aab95;
+  box-shadow:0 0 0 4px rgba(58,171,149,.18);
+}
+.zfq-result-title{
+  font-size:26px;font-weight:700;color:#1a1a1a;
+  line-height:1.18;margin:0 0 16px;
+}
 
-  .zf-card{
-    background:var(--zf-white);
-    border-radius:18px;
-    overflow:hidden;
-    border:1px solid var(--border);
-  }
-  .zf-card-hero{
-    position:relative;
-    background:var(--zf-bg);
-    overflow:hidden;
-  }
-  .zf-card-hero::before{
-    content:"";position:absolute;left:0;right:0;top:0;height:4px;
-    background:var(--zf-rainbow);z-index:2;
-  }
-  .zf-card-photo{
-    position:relative;
-    width:100%;
-    aspect-ratio:16/11;
-    background:var(--zf-bg);
-    display:flex;align-items:center;justify-content:center;
-    overflow:hidden;
-  }
-  .zf-card-photo img{
-    max-width:78%;max-height:88%;width:auto;height:auto;
-    object-fit:contain;
-    display:block;
-    filter:drop-shadow(0 18px 24px rgba(39,39,39,0.18));
-    animation:zfPhotoIn .6s var(--ease);
-  }
-  @keyframes zfPhotoIn{
-    from{opacity:0;transform:translateY(12px) scale(.96)}
-    to{opacity:1;transform:translateY(0) scale(1)}
-  }
-  .zf-card-meta{
-    padding:22px 24px 4px;
-    background:var(--zf-bg);
-    display:flex;align-items:flex-end;gap:16px;
-  }
-  .zf-card-hero-text{flex:1;min-width:0}
-  .zf-card-tag{
-    font-family:'Inter',sans-serif;font-weight:600;
-    font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:var(--fg-2);
-    margin-bottom:6px;
-  }
-  .zf-card-name{
-    font-family:'Outfit',sans-serif;font-weight:900;
-    font-size:clamp(34px,8vw,44px);line-height:0.95;letter-spacing:-0.02em;
-    text-transform:uppercase;color:var(--zf-black);margin:0 0 8px;
-  }
-  .zf-card-price{
-    display:inline-flex;align-items:baseline;gap:6px;
-    font-family:'Outfit',sans-serif;font-weight:700;
-    font-size:18px;color:var(--zf-black);
-  }
-  .zf-card-price small{font-size:11px;color:var(--fg-3);font-weight:600;letter-spacing:0.08em;text-transform:uppercase}
+.zfq-prod-card{
+  background:#f7fffd;
+  border:1.5px solid #d8f2ed;
+  border-radius:16px;
+  overflow:hidden;
+  margin-bottom:16px;
+}
+.zfq-prod-img{
+  background:#d4ede8;
+  padding:28px 24px;
+  display:flex;align-items:center;justify-content:center;
+  min-height:180px;
+}
+.zfq-prod-img img{
+  max-width:260px;max-height:150px;
+  object-fit:contain;
+  filter:drop-shadow(0 10px 20px rgba(0,0,0,.13));
+  animation:zfqImgIn .5s cubic-bezier(.4,0,.2,1);
+}
+@keyframes zfqImgIn{
+  from{opacity:0;transform:translateY(8px) scale(.96)}
+  to{opacity:1;transform:none}
+}
+.zfq-prod-body{padding:18px 20px 20px}
+.zfq-prod-tag{
+  font-size:11px;font-weight:600;
+  letter-spacing:.1em;text-transform:uppercase;
+  color:#888;margin-bottom:5px;
+}
+.zfq-prod-name{
+  font-size:26px;font-weight:700;color:#1a1a1a;
+  margin:0 0 6px;line-height:1.1;
+}
+.zfq-prod-desc{
+  font-size:14px;color:#555;
+  line-height:1.55;margin:0 0 14px;
+}
+.zfq-prod-why{
+  background:#1a1a1a;color:#fff;
+  border-radius:10px;
+  padding:13px 16px;
+  font-size:13px;line-height:1.6;
+  margin-bottom:16px;
+}
+.zfq-prod-why-lbl{
+  font-size:10px;font-weight:700;
+  letter-spacing:.14em;text-transform:uppercase;
+  color:#f5c842;margin-bottom:6px;
+  display:flex;align-items:center;gap:8px;
+}
+.zfq-prod-why-lbl::before{
+  content:"";display:inline-block;
+  width:14px;height:1.5px;background:#f5c842;
+}
+.zfq-prod-price{
+  font-size:19px;font-weight:700;color:#1a1a1a;
+  margin-bottom:14px;
+}
+.zfq-btn-shop{
+  display:flex;align-items:center;justify-content:center;gap:8px;
+  padding:13px 22px;
+  background:#f5c842;color:#1a1a1a;
+  border:none;border-radius:10px;
+  font-size:14px;font-weight:700;
+  text-decoration:none;
+  width:100%;
+  transition:opacity .15s;
+}
+.zfq-btn-shop:hover{opacity:.88}
+.zfq-btn-shop svg{width:16px;height:16px;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;fill:none}
 
-  .zf-card-pricepill{
-    align-self:flex-end;
-    display:inline-flex;align-items:baseline;gap:4px;
-    font-family:'Outfit',sans-serif;font-weight:800;
-    font-size:22px;color:var(--zf-white);
-    background:var(--zf-black);
-    padding:8px 14px;border-radius:999px;
-    letter-spacing:-0.01em;
-  }
-  .zf-card-pricepill small{font-size:10px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;opacity:0.7}
+.zfq-result-nav{
+  display:flex;
+  border-top:1px solid #f0f0f0;
+}
+.zfq-nav-btn{
+  flex:1;
+  display:inline-flex;align-items:center;justify-content:center;gap:7px;
+  padding:14px;
+  background:none;border:none;
+  font-size:13px;font-weight:500;
+  color:#666;
+  transition:color .15s,background .15s;
+}
+.zfq-nav-btn:hover{color:#1a1a1a;background:#f9f9f9}
+.zfq-nav-btn+.zfq-nav-btn{border-left:1px solid #f0f0f0}
+.zfq-nav-btn svg{width:14px;height:14px;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;fill:none}
 
-  .zf-card-tagline{
-    padding:18px 24px 4px;
-    font-size:15px;line-height:1.5;color:var(--zf-black);
-    margin:0;
-  }
+/* trust strip */
+.zfq-trust{
+  display:flex;justify-content:space-around;
+  padding:13px 14px;
+  background:#fff;
+  border:1.5px solid #e8e8e8;
+  border-radius:12px;
+  margin-top:14px;
+}
+.zfq-trust-item{
+  display:flex;flex-direction:column;align-items:center;gap:5px;
+  font-size:10px;font-weight:600;
+  letter-spacing:.07em;text-transform:uppercase;
+  color:#666;text-align:center;
+}
+.zfq-trust-item svg{
+  width:18px;height:18px;
+  stroke:#1a1a1a;stroke-width:1.75;
+  stroke-linecap:round;stroke-linejoin:round;fill:none;
+}
 
-  .zf-spec-list{
-    padding:16px 24px;margin:8px 0 0;list-style:none;
-    border-top:1px solid var(--border);
-  }
-  .zf-spec{
-    display:flex;gap:14px;padding:10px 0;
-    border-bottom:1px solid var(--border);
-    font-size:14px;align-items:flex-start;
-  }
-  .zf-spec:last-child{border-bottom:0}
-  .zf-spec-key{
-    flex:0 0 90px;
-    font-family:'Inter',sans-serif;font-weight:600;
-    font-size:10px;letter-spacing:0.14em;text-transform:uppercase;
-    color:var(--fg-3);padding-top:2px;
-  }
-  .zf-spec-val{flex:1;color:var(--zf-black);line-height:1.4}
-
-  .zf-badges{
-    display:flex;flex-wrap:wrap;gap:6px;
-    padding:0 24px 20px;
-  }
-  .zf-badge{
-    font-family:'Inter',sans-serif;font-weight:500;
-    font-size:11px;letter-spacing:0.04em;
-    padding:5px 10px;border-radius:999px;
-    background:var(--zf-bg);color:var(--zf-black);
-    border:1px solid var(--border);
-  }
-
-  .zf-why{
-    margin:0 24px 24px;
-    padding:14px 16px;
-    background:var(--zf-black);color:var(--zf-white);
-    border-radius:10px;
-    font-size:13.5px;line-height:1.55;
-  }
-  .zf-why-label{
-    font-family:'Inter',sans-serif;font-weight:700;
-    font-size:10px;letter-spacing:0.18em;text-transform:uppercase;
-    color:var(--zf-yellow);margin-bottom:6px;
-    display:flex;align-items:center;gap:6px;
-  }
-  .zf-why-label::before{
-    content:"";display:inline-block;width:14px;height:1.5px;background:var(--zf-yellow);
-  }
-
-  .zf-result-actions{
-    padding:0 24px 24px;display:flex;flex-direction:column;gap:10px;
-  }
-  .zf-shop{
-    display:inline-flex;align-items:center;justify-content:center;gap:10px;
-    background:var(--zf-red);color:var(--zf-white);
-    font-family:'Inter',sans-serif;font-weight:600;
-    font-size:13px;letter-spacing:0.1em;text-transform:uppercase;
-    padding:16px 22px;border-radius:4px;
-    text-decoration:none;border:0;
-    transition:background .15s var(--ease),transform .1s var(--ease);
-  }
-  .zf-shop:hover{background:var(--zf-red-dark)}
-  .zf-shop:active{transform:translateY(1px)}
-  .zf-shop svg{width:14px;height:14px;stroke-width:2.5}
-
-  .zf-restart{
-    background:transparent;border:0;
-    font-family:'Inter',sans-serif;font-weight:500;
-    font-size:13px;color:var(--fg-2);
-    padding:14px;letter-spacing:0.05em;
-    transition:color .15s var(--ease);
-    cursor:pointer;
-  }
-  .zf-restart:hover{color:var(--zf-black)}
-  .zf-result-nav{
-    display:flex;gap:0;
-    border-top:1px solid var(--border);
-    margin-top:4px;
-  }
-  .zf-result-nav .zf-restart{
-    flex:1;
-    display:inline-flex;align-items:center;justify-content:center;gap:6px;
-  }
-  .zf-result-nav .zf-restart + .zf-restart{
-    border-left:1px solid var(--border);
-  }
-  .zf-result-nav .zf-restart svg{
-    width:14px;height:14px;stroke-width:2;
-    stroke:currentColor;fill:none;
-    stroke-linecap:round;stroke-linejoin:round;
-  }
-
-  /* Trust strip under result */
-  .zf-trust{
-    display:flex;justify-content:space-between;gap:8px;
-    margin-top:18px;padding:14px 18px;
-    background:var(--zf-white);
-    border:1px solid var(--border);border-radius:14px;
-  }
-  .zf-trust-item{
-    flex:1;display:flex;flex-direction:column;align-items:center;text-align:center;gap:4px;
-  }
-  .zf-trust-item svg{width:18px;height:18px;stroke-width:1.75;color:var(--zf-black)}
-  .zf-trust-item span{
-    font-family:'Inter',sans-serif;font-weight:600;
-    font-size:10px;letter-spacing:0.08em;text-transform:uppercase;color:var(--fg-2);
-    line-height:1.2;
-  }
-
-  /* Footer note */
-  .zf-foot{
-    margin-top:24px;text-align:center;
-    font-size:11px;letter-spacing:0.12em;text-transform:uppercase;
-    color:var(--fg-3);font-weight:500;
-  }
-  .zf-foot a{color:var(--zf-black);text-decoration:none;border-bottom:1px solid var(--border)}
-
-  @media (max-width:420px){
-    .zf-card-img{width:96px;height:96px}
-    .zf-insole-svg{width:60px}
-  }
+/* ── responsive ──────────────────────────────────────────── */
+@media (max-width:500px){
+  body{padding:0;align-items:stretch}
+  .zfq-card{border-radius:0;min-height:100vh;box-shadow:none}
+}
+@media (max-width:380px){
+  .zfq-opts.g2{grid-template-columns:1fr}
+  .zfq-opts.g3{grid-template-columns:1fr 1fr}
+}
 </style>
 </head>
 <body>
 
-<div class="zf-quiz" id="zfQuiz">
+<div class="zfq-card" id="zfqCard">
 
-  <header class="zf-head">
-    <div class="zf-mark">
-      <!-- inline ZipFit-ish lockup (uses the rainbow gradient as an inline SVG accent) -->
-      <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true">
+  <!-- Top bar -->
+  <header class="zfq-topbar">
+    <a class="zfq-logo" href="/" aria-label="ZipFit home">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
         <defs>
-          <linearGradient id="zfg" x1="0" y1="0" x2="22" y2="0" gradientUnits="userSpaceOnUse">
-            <stop offset="0%" stop-color="#EF4623"/>
-            <stop offset="20%" stop-color="#FBCF21"/>
-            <stop offset="40%" stop-color="#68BD46"/>
-            <stop offset="60%" stop-color="#5DC7D1"/>
-            <stop offset="80%" stop-color="#2F438F"/>
+          <linearGradient id="zfqGrad" x1="0" y1="0" x2="24" y2="0" gradientUnits="userSpaceOnUse">
+            <stop offset="0%"   stop-color="#EF4623"/>
+            <stop offset="50%"  stop-color="#68BD46"/>
             <stop offset="100%" stop-color="#952A7D"/>
           </linearGradient>
         </defs>
-        <rect x="1" y="1" width="20" height="20" rx="5" fill="#272727"/>
-        <path d="M6 7h10l-7 8h7" stroke="url(#zfg)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        <rect x="1" y="1" width="22" height="22" rx="5" fill="#1a1a1a"/>
+        <path d="M7 8h10l-7 8h7" stroke="url(#zfqGrad)" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round"/>
       </svg>
-      <span>ZipFit<span class="reg">®</span></span>
-    </div>
-    <div class="zf-pill">Insole Finder</div>
+      ZipFit<sup>®</sup>
+    </a>
+    <button class="zfq-close" id="zfqClose" aria-label="Close quiz">
+      <svg viewBox="0 0 16 16"><path d="M2 2l12 12M14 2L2 14"/></svg>
+    </button>
   </header>
 
-  <section class="zf-intro" id="zfIntro">
-    <div class="zf-eyebrow"><span class="bar"></span> We know feet</div>
-    <h1 class="zf-title">Find your<br>best match</h1>
-    <p class="zf-sub">Three quick questions and we'll match you with the ZipFit insole built for your activity, your shoes, and your size.</p>
-  </section>
-
-  <div class="zf-progress" id="zfProgressWrap" hidden>
-    <div class="zf-progress-track"><div class="zf-progress-fill" id="zfProgress"></div></div>
-    <div class="zf-progress-count" id="zfCount">0 / 2</div>
+  <!-- Progress area -->
+  <div class="zfq-progress-area" id="zfqProgressArea">
+    <div class="zfq-foot-track">
+      <div class="zfq-foot-track-bg"></div>
+      <div class="zfq-foot-trail" id="zfqTrail"></div>
+      <div class="zfq-foot-walker" id="zfqWalker">
+        <!-- foot/shoe SVG -->
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M3 17c0-2 2-3 4-3l4-3h3l3 2 4 1c1 0 2 1 2 2v3H3z"/>
+          <path d="M10 11V8"/>
+          <path d="M13 12V9"/>
+        </svg>
+      </div>
+    </div>
+    <p class="zfq-progress-label" id="zfqProgressLabel">Let's find your perfect insole</p>
   </div>
 
-  <main class="zf-stage" id="zfStage"></main>
+  <!-- Dynamic quiz body -->
+  <div class="zfq-body" id="zfqBody"></div>
 
-  <p class="zf-foot">Handmade in Italy · Since 1989</p>
 </div>
 
-<!-- Reusable lucide-style icon defs (inline so the file is self-contained) -->
-<svg width="0" height="0" style="position:absolute" aria-hidden="true">
-  <defs>
-    <!-- Arch shapes -->
-    <symbol id="i-arch-low" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M3 17h18"/>
-      <path d="M4 17c2-1 4-1.5 8-1.5s6 .5 8 1.5"/>
-    </symbol>
-    <symbol id="i-arch-med" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M3 17h18"/>
-      <path d="M4 17c2-3 4-5 8-5s6 2 8 5"/>
-    </symbol>
-    <symbol id="i-arch-high" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M3 17h18"/>
-      <path d="M4 17c2-6 4-9 8-9s6 3 8 9"/>
-    </symbol>
-    <symbol id="i-help" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
-      <circle cx="12" cy="12" r="9"/>
-      <path d="M9.5 9.5a2.5 2.5 0 1 1 3.5 2.3c-.8.4-1 1-1 2"/>
-      <path d="M12 17h.01"/>
-    </symbol>
-    <!-- Activities -->
-    <symbol id="i-ski" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M3 21l18-6"/>
-      <path d="M4 22l16-5.5"/>
-      <path d="M12 4l4 12"/>
-      <circle cx="11" cy="3.5" r="1.5"/>
-      <path d="M11 5l-2 4 3 3"/>
-    </symbol>
-    <symbol id="i-run" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
-      <circle cx="16" cy="4" r="1.5"/>
-      <path d="M11 21l2-6-3-3 2-5 4 3 3 1"/>
-      <path d="M5 13l3-1 2 2"/>
-      <path d="M6 19l3-2"/>
-    </symbol>
-    <symbol id="i-hike" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M3 20h18"/>
-      <path d="M3 20l5-10 4 6 3-4 6 8"/>
-      <circle cx="16" cy="6" r="1"/>
-    </symbol>
-    <symbol id="i-everyday" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M4 17c0-2 1-3 3-3h10c2 0 3 1 3 3v2H4z"/>
-      <path d="M7 14V6c0-1 .5-2 2-2h3l3 5 2 1v4"/>
-    </symbol>
-    <!-- Shoe types -->
-    <symbol id="i-skiboot" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M7 3h4v10l8 3v5H4v-5l3-1z"/>
-      <path d="M7 7h4"/>
-      <path d="M7 10h4"/>
-    </symbol>
-    <symbol id="i-snowboard" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M6 4h6v9l7 2v6H4v-6l2-1z"/>
-      <path d="M6 8h6"/>
-      <path d="M6 11h6"/>
-      <path d="M5 18h13"/>
-      <path d="M8 14l2 1"/>
-    </symbol>
-    <symbol id="i-nordic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M3 19h18"/>
-      <path d="M6 19v-3c0-1 1-2 2-2h2V6h3l3 8h2c1 0 2 1 2 2v3"/>
-      <path d="M14 14l1 5"/>
-      <path d="M10 14v5"/>
-    </symbol>
-    <symbol id="i-athletic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M3 17c0-2 2-3 4-3l4-3 2 1 2-1 4 2c2 1 3 2 3 4v1H3z"/>
-      <path d="M11 11l1 3"/>
-      <path d="M14 12l1 2"/>
-    </symbol>
-    <symbol id="i-boots" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M8 3h4v11h6c1 0 2 1 2 2v4H6v-4l2-2z"/>
-      <path d="M6 18h14"/>
-    </symbol>
-    <symbol id="i-casual" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M3 16c0-2 1-3 3-3l5-3h3l3 2 4 1c1 0 2 1 2 2v3H3z"/>
-      <path d="M11 10v3"/>
-    </symbol>
-    <!-- UI -->
-    <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M5 12l5 5L20 7"/>
-    </symbol>
-    <symbol id="i-arrow-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M5 12h14"/><path d="m13 5 7 7-7 7"/>
-    </symbol>
-    <symbol id="i-arrow-left" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M19 12H5"/><path d="m11 5-7 7 7 7"/>
-    </symbol>
-    <symbol id="i-italy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M12 21s-7-6-7-12a7 7 0 0 1 14 0c0 6-7 12-7 12z"/>
-      <circle cx="12" cy="9" r="2.5"/>
-    </symbol>
-    <symbol id="i-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
-      <circle cx="12" cy="12" r="9"/>
-      <path d="M12 7v5l3 2"/>
-    </symbol>
-    <symbol id="i-leaf" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M4 20c0-9 6-15 16-15 0 9-6 15-16 15z"/>
-      <path d="M4 20c5-5 8-8 16-15"/>
-    </symbol>
-  </defs>
+<!-- ── Inline SVG icon system ───────────────────────────── -->
+<svg width="0" height="0" style="position:absolute;overflow:hidden" aria-hidden="true">
+<defs>
+
+<!-- Arch types -->
+<symbol id="zi-arch-flat" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M3 16h18"/>
+  <path d="M4 16c4-.4 8-.4 16 0"/>
+</symbol>
+<symbol id="zi-arch-neutral" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M3 16h18"/>
+  <path d="M4 16c2-3 5-5 8-5s6 2 8 5"/>
+</symbol>
+<symbol id="zi-arch-high" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M3 16h18"/>
+  <path d="M4 16c2-7 5-11 8-11s6 4 8 11"/>
+</symbol>
+<symbol id="zi-arch-unsure" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+  <circle cx="12" cy="12" r="9"/>
+  <path d="M9.5 9.5a2.5 2.5 0 1 1 3 2.3c-.6.4-.8 1-.8 1.7"/>
+  <circle cx="12" cy="16.5" r=".75" fill="currentColor"/>
+</symbol>
+
+<!-- Pronation -->
+<symbol id="zi-over" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M9 4c0 4-1 7-3 9h12c-2-2-3-5-3-9"/>
+  <path d="M6 13c0 3 2 5 6 5s6-2 6-5"/>
+  <path d="M8 4h8"/>
+</symbol>
+<symbol id="zi-sup" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M9 20c0-4-1-7-3-9h12c-2 2-3 5-3 9"/>
+  <path d="M6 11c0-3 2-5 6-5s6 2 6 5"/>
+  <path d="M8 20h8"/>
+</symbol>
+<symbol id="zi-neutral-walk" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M5 12h14"/>
+  <path d="M12 5v14"/>
+  <circle cx="12" cy="12" r="3"/>
+</symbol>
+<symbol id="zi-help" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+  <circle cx="12" cy="12" r="9"/>
+  <path d="M9.5 9.5a2.5 2.5 0 1 1 3 2.3c-.6.4-.8 1-.8 1.7"/>
+  <circle cx="12" cy="16.5" r=".75" fill="currentColor"/>
+</symbol>
+
+<!-- Pain conditions -->
+<symbol id="zi-foot" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M8 5h8a5 5 0 0 1 5 5v3a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5V10a5 5 0 0 1 5-5z"/>
+  <circle cx="10" cy="9" r="1" fill="currentColor"/>
+  <circle cx="14" cy="9" r="1" fill="currentColor"/>
+</symbol>
+<symbol id="zi-ankle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M10 3h4v10l3 8H7l3-8z"/>
+  <path d="M8 21h8"/>
+  <path d="M10 13h4"/>
+</symbol>
+<symbol id="zi-back" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+  <rect x="9" y="2" width="6" height="20" rx="3"/>
+  <path d="M7 6h10M7 12h10M7 18h10"/>
+</symbol>
+<symbol id="zi-knee" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+  <line x1="12" y1="3" x2="12" y2="21"/>
+  <circle cx="12" cy="12" r="4"/>
+</symbol>
+<symbol id="zi-plantar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M12 3 8 11h8l-4-8z"/>
+  <path d="M6 15h12M9 19h6"/>
+</symbol>
+<symbol id="zi-flatfeet" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M3 15h18"/>
+  <path d="M4 15c5-.1 10-.1 16 0"/>
+  <path d="M6 10c2-1 5-1 6-1s4 0 6 1"/>
+</symbol>
+<symbol id="zi-pron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M5 17c0-3 3-8 7-8s7 5 7 8"/>
+  <path d="M9 10 5 17M15 10l4 7"/>
+</symbol>
+<symbol id="zi-tendon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M12 4v16"/>
+  <path d="M8 8c2 1 4 0 4-2M16 8c-2 1-4 0-4-2"/>
+  <circle cx="12" cy="4" r="1.5" fill="currentColor"/>
+  <circle cx="12" cy="20" r="1.5" fill="currentColor"/>
+</symbol>
+<symbol id="zi-bunion" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M11 4h4a5 5 0 0 1 5 5v8H8l-2-8a5 5 0 0 1 5-5z"/>
+  <circle cx="7" cy="15" r="3"/>
+</symbol>
+<symbol id="zi-hamstring" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M12 4v16"/>
+  <path d="M9 7c1 2 3 3 3 5M15 7c-1 2-3 3-3 5"/>
+</symbol>
+<symbol id="zi-morton" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+  <rect x="7" y="5" width="10" height="14" rx="2"/>
+  <path d="M10 5v14M14 5v14M7 12h10"/>
+  <circle cx="10" cy="15" r="1.5" fill="currentColor" opacity=".6"/>
+</symbol>
+<symbol id="zi-meta" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M8 6h8v9H8z" rx="2"/>
+  <path d="M10 15v4M12 15v4M14 15v4M10 6V4M12 6V3M14 6V4"/>
+</symbol>
+
+<!-- Goals -->
+<symbol id="zi-relief" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M12 22c5.5 0 10-4.5 10-10S17.5 2 12 2 2 6.5 2 12s4.5 10 10 10z"/>
+  <path d="M8 14s1.5 2 4 2 4-2 4-2"/>
+  <circle cx="9" cy="10" r="1" fill="currentColor"/>
+  <circle cx="15" cy="10" r="1" fill="currentColor"/>
+</symbol>
+<symbol id="zi-posture" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+  <line x1="12" y1="2" x2="12" y2="22"/>
+  <path d="M9 5l3-3 3 3M9 19l3 3 3-3"/>
+  <circle cx="12" cy="9" r="2.5"/>
+</symbol>
+<symbol id="zi-comfort" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M3 17c0-2 2-3 4-3l4-3h3l3 2 4 1c1 0 2 1 2 2v3H3z"/>
+  <path d="M10 11V8"/>
+</symbol>
+<symbol id="zi-shoelife" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M12 22c5.5 0 10-4.5 10-10S17.5 2 12 2 2 6.5 2 12s4.5 10 10 10z"/>
+  <path d="M12 6v6l4 2"/>
+</symbol>
+<symbol id="zi-run" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+  <circle cx="16" cy="4" r="1.5"/>
+  <path d="M11 21l2-6-3-3 2-5 4 3 3 1"/>
+  <path d="M5 13l3-1 2 2M6 19l3-2"/>
+</symbol>
+<symbol id="zi-money" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+  <circle cx="12" cy="12" r="9"/>
+  <path d="M12 7v10M9 9h4.5a1.5 1.5 0 0 1 0 3h-3a1.5 1.5 0 0 0 0 3H15"/>
+</symbol>
+<symbol id="zi-ortho" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M3 20h18M5 20V9l7-5 7 5v11"/>
+  <path d="M10 20v-5h4v5"/>
+</symbol>
+
+<!-- Shoe types -->
+<symbol id="zi-shoe-run" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M3 17c0-2 2-3 4-3l4-3h3l3 2 4 1c1 0 2 1 2 2v2H3z"/>
+  <path d="M10 11l1 3M13 12l1 2"/>
+</symbol>
+<symbol id="zi-shoe-sneak" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M3 16c0-2 1-3 3-3l4-3h3l3 2 5 1c1 0 2 1 2 2v3H3z"/>
+  <path d="M10 10v3M6 13l4 .5"/>
+</symbol>
+<symbol id="zi-shoe-work" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M8 3h4v11h6c1 0 2 1 2 2v4H6v-4l2-2z"/>
+  <path d="M6 18h14M8 7h4"/>
+</symbol>
+<symbol id="zi-shoe-hike" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M8 3h4v11h6c1 0 2 1 2 2v4H6v-4l2-2z"/>
+  <path d="M6 18h14M8 7h4M8 10h4"/>
+</symbol>
+<symbol id="zi-shoe-dress" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M3 18h18M5 18c0-4 2-6 6-7h8c1 0 2 .5 2 2V18"/>
+  <path d="M8 11c0-3 1-5 4-5"/>
+</symbol>
+<symbol id="zi-shoe-ski" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M7 3h4v10l8 3v5H4v-5l3-1z"/>
+  <path d="M7 7h4M7 10h4"/>
+</symbol>
+
+<!-- UI -->
+<symbol id="zi-arrow-r" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M5 12h14"/><path d="m13 5 7 7-7 7"/>
+</symbol>
+<symbol id="zi-arrow-l" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M19 12H5"/><path d="m11 5-7 7 7 7"/>
+</symbol>
+<symbol id="zi-gift" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+  <polyline points="20 12 20 22 4 22 4 12"/>
+  <rect x="2" y="7" width="20" height="5"/>
+  <line x1="12" y1="22" x2="12" y2="7"/>
+  <path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/>
+  <path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/>
+</symbol>
+<symbol id="zi-reload" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M1 4v6h6"/><path d="M23 20v-6h-6"/>
+  <path d="M20.49 9A9 9 0 0 0 5.64 5.64L1 10m22 4-4.64 4.36A9 9 0 0 1 3.51 15"/>
+</symbol>
+<symbol id="zi-edit" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/>
+  <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/>
+</symbol>
+<symbol id="zi-italy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M12 21s-7-6-7-12a7 7 0 0 1 14 0c0 6-7 12-7 12z"/>
+  <circle cx="12" cy="9" r="2.5"/>
+</symbol>
+<symbol id="zi-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+  <circle cx="12" cy="12" r="9"/>
+  <path d="M12 7v5l3 2"/>
+</symbol>
+<symbol id="zi-leaf" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M4 20c0-9 6-15 16-15 0 9-6 15-16 15z"/>
+  <path d="M4 20c5-5 8-8 16-15"/>
+</symbol>
+
+</defs>
 </svg>
 
 <script>
 /* ============================================================
-   QUIZ DATA — flow preserved from source
+   ZipFit Insole Quiz
    ============================================================ */
-const QUESTIONS = [
-  {
-    label: 'Step 1 of 3',
-    text:  "What's your primary activity?",
-    key:   'activity',
-    opts: [
-      { icon:'i-ski',      title:'Skiing / snowboarding', desc:'Alpine, touring, or resort',          val:'ski'      },
-      { icon:'i-run',      title:'Running / biking',      desc:'Athletic, high-performance sport',    val:'run'      },
-      { icon:'i-hike',     title:'Hiking / trekking',     desc:'Long days on trails or rugged terrain', val:'hike'   },
-      { icon:'i-everyday', title:'Everyday wear',         desc:'Work, walking, casual shoes',         val:'everyday' },
-    ],
-  },
-  // Step 2 is dynamic — the shoe options are filtered by activity.
-  // See SHOES_BY_ACTIVITY below.
-];
 
-/* Activity-filtered shoe options.
-   Each activity has its OWN set of relevant footwear, so the same
-   choice never appears in both questions. */
-const SHOES_BY_ACTIVITY = {
-  ski: {
-    text: 'Which kind of boot?',
-    opts: [
-      { icon:'i-skiboot',   title:'Alpine ski boot',       desc:'Stiff downhill shell, resort or freeride', val:'alpine'  },
-      { icon:'i-skiboot',   title:'Touring / AT boot',     desc:'Walk-mode hybrid, ski mountaineering',     val:'touring' },
-      { icon:'i-snowboard', title:'Snowboard boot',        desc:'Soft shell, freestyle or all-mountain',    val:'snowboard' },
-      { icon:'i-nordic',    title:'Nordic / XC boot',      desc:'Cross-country, skate, or backcountry XC',  val:'nordic'  },
-    ],
-  },
-  run: {
-    text: 'Which kind of athletic shoe?',
-    opts: [
-      { icon:'i-run',      title:'Running shoes',         desc:'Road, gym, or treadmill',                  val:'running' },
-      { icon:'i-athletic', title:'Cycling or other sport', desc:'Biking shoes, court, lightweight kicks',  val:'biking'  },
-    ],
-  },
-  hike: {
-    text: 'Which kind of trail footwear?',
-    opts: [
-      { icon:'i-boots',    title:'Hiking boots',          desc:'Mid-cut or stiffer mountaineering boots',  val:'hikingboot' },
-      { icon:'i-athletic', title:'Trail runners',         desc:'Low-cut, lightweight trail shoes',         val:'trailrun'   },
-    ],
-  },
-  everyday: {
-    text: 'Which kind of everyday shoe?',
-    opts: [
-      { icon:'i-boots',    title:'Work boots',            desc:'Blundstones, Redwings, work footwear',     val:'workboot' },
-      { icon:'i-casual',   title:'Casual / dress',        desc:'Vans, sneakers, loafers, daily wear',      val:'casual'   },
-    ],
-  },
-};
+// ── Helpers ─────────────────────────────────────────────────
+const USE = (id) =>
+  `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><use href="#${id}"/></svg>`;
 
-/* ============================================================
-   PRODUCTS — swap handles + variant IDs for live Shopify
-   ============================================================ */
+// ── Products ─────────────────────────────────────────────────
 const PRODUCTS = {
-  crossover: {
-    handle:'crossover',
-    name:'Crossover',
-    price:'$66',
-    image:'insoles/crossover.webp',
-    tagline:"The best of both worlds — moisture-resistant and shock-absorbing. Our favorite for ski boots and athletic use.",
-    material:'EVA cork base · perforated synthetic top sheet',
-    bestFor:'Skiing, ski touring, athletic shoes',
-    profile:'Medium profile',
-    accent:'#5DC7D1',
-    badges:['Ski boots','Athletic','Moisture-resistant','EVA cork'],
+  classic: {
+    id: 'classic',
+    handle: 'legacy',
+    name: 'ZipFit Classic',
+    price: '$66',
+    img: 'legacy.webp',
+    tagline: 'Tried and trusted for 30+ years. Natural leather breaks in over time for a customized fit in any shoe.',
   },
-  zippy: {
-    handle:'zippy',
-    name:'Zippy',
-    price:'$60',
-    image:'insoles/zippy.webp',
-    tagline:'The lightest and slimmest insole — flexibility and a low profile without sacrificing support.',
-    material:'EVA foam base · perforated synthetic top sheet',
-    bestFor:'Running shoes, touring boots, flexible footwear',
-    profile:'Low profile · slimmest',
-    accent:'#68BD46',
-    badges:['Lightweight','Running','Touring','Low profile'],
+  sport: {
+    id: 'sport',
+    handle: 'crossover',
+    name: 'ZipFit Sport',
+    price: '$66',
+    img: 'crossover.webp',
+    tagline: 'The best of both worlds — moisture-resistant and shock-absorbing. Built for athletic and high-performance use.',
   },
-  legacy: {
-    handle:'legacy',
-    name:'Legacy',
-    price:'$71',
-    image:'insoles/legacy.webp',
-    tagline:'Tried and trusted for 30+ years. Natural leather breaks in over time for a customized fit in any shoe.',
-    material:'EVA cork base · natural leather top sheet',
-    bestFor:'All shoes and activities, especially ski boots',
-    profile:'Medium profile',
-    accent:'#EF4623',
-    badges:['All-purpose','Leather top','Ski boots','Everyday'],
-  },
-  wander: {
-    handle:'wander',
-    name:'Wander',
-    price:'$99',
-    image:'insoles/wander.webp',
-    tagline:'Maximum structure with a self-molding advantage. Built for long days on your feet and rugged durability.',
-    material:'Self-molding cork composite · natural leather top sheet',
-    bestFor:'Hiking, boots, long days on feet, everyday wear',
-    profile:'Most structured',
-    accent:'#952A7D',
-    badges:['Most structured','Self-molding','Hiking','Leather top'],
+  active: {
+    id: 'active',
+    handle: 'wander',
+    name: 'ZipFit Active',
+    price: '$99',
+    img: 'wander.webp',
+    tagline: 'Maximum structure with a self-molding advantage. Built for long days on your feet and rugged footwear.',
   },
 };
 
-/* ============================================================
-   RECOMMENDATION LOGIC — maps (activity, shoe) to a product + reason
-   ============================================================ */
-const MATRIX = {
-  // ski
-  'ski|alpine':     { id:'crossover', why:"The Crossover is ZipFit's go-to for alpine boots. EVA cork base + perforated synthetic top sheet delivers the perfect combo of control and moisture resistance inside a stiff shell." },
-  'ski|touring':    { id:'zippy',     why:"For touring boots, the Zippy's slim profile keeps weight down and clears tight liners while still delivering full-foot support on the skin track." },
-  'ski|snowboard':  { id:'legacy',    why:"Snowboard boots run softer and benefit from the Legacy's cork base plus leather top sheet — it adds structure without killing the play, and breaks in for a personalized fit." },
-  'ski|nordic':     { id:'zippy',     why:"Nordic boots demand a low, flexible footbed. The Zippy is ZipFit's slimmest insole — it preserves the boot's natural flex while adding genuine arch support." },
-  // running / biking
-  'run|running':    { id:'zippy',     why:"The Zippy is ZipFit's lightest and slimmest insole — built for running shoes where flexibility and low stack height matter most." },
-  'run|biking':     { id:'crossover', why:"The Crossover's responsive EVA cork base gives cycling and court shoes a stable, energy-returning platform without packing out." },
-  // hiking
-  'hike|hikingboot':{ id:'wander',    why:"The Wander is built for the long haul. Self-molding cork composite gives the most structured support in the lineup — perfect for hiking boots and long days on your feet." },
-  'hike|trailrun':  { id:'crossover', why:"For trail runners, the Crossover blends cork's stability with a moisture-managing top sheet — a workhorse for fast-and-light days." },
-  // everyday
-  'everyday|workboot':{ id:'wander',  why:"Work boots earn the Wander. Its thermoformable cork composite molds to your foot and stays put through 10-hour shifts on hard floors." },
-  'everyday|casual':  { id:'legacy',  why:"The Legacy is the original drop-in for daily wear. The natural leather top sheet wears in over time for a fit that feels custom in any sneaker, loafer, or low boot." },
+// ── Recommendation why-copy ──────────────────────────────────
+const WHY = {
+  'sport-running':
+    "The ZipFit Sport is built for athletic shoes — EVA cork base delivers responsive energy return and its moisture-resistant top sheet keeps you fresh through every workout.",
+  'sport-high-arch':
+    "High arches need targeted support. The ZipFit Sport's EVA cork base cradles your arch precisely while staying lightweight for active daily use.",
+  'active-work':
+    "Work boots put serious demands on your feet. The ZipFit Active's self-molding cork composite molds to your exact foot shape and holds up through 10-hour shifts on hard floors.",
+  'active-hike':
+    "The ZipFit Active is built for the long haul. Self-molding cork composite gives you the most structured support in the lineup — perfect for hiking boots and multi-day adventures.",
+  'classic-sneakers':
+    "For everyday sneakers, the ZipFit Classic is the perfect drop-in. Natural leather top sheet breaks in to your foot's shape over time for a truly personalized fit.",
+  'classic-dress':
+    "Dress shoes get the ZipFit Classic — slim profile plus a leather top sheet means all-day comfort without any bulk, and it only gets better with wear.",
+  'classic-default':
+    "The ZipFit Classic is our most versatile all-rounder. Natural cork base + leather top sheet delivers genuine all-day comfort in virtually any shoe.",
 };
 
-function recommend(a){
-  const key = `${a.activity}|${a.shoe}`;
-  return MATRIX[key] || { id:'legacy', why:'For everyday casual wear, the Legacy is a versatile all-rounder. The natural leather top breaks in over time for a truly customized feel in any shoe.' };
-}
-
-/* ============================================================
-   RENDER LOOP
-   ============================================================ */
-let answers = {};
-let step = 0;
-
-const stage = document.getElementById('zfStage');
-const intro = document.getElementById('zfIntro');
-const progressWrap = document.getElementById('zfProgressWrap');
-const progressFill = document.getElementById('zfProgress');
-const progressCount = document.getElementById('zfCount');
-
-const TOTAL_STEPS = 3;
-
-/* ZipFit insole sizes — mapped by INSOLE LENGTH in cm (heel→toe).
-   Anchored to US Men's last lengths: M 9 = 26.5cm, M 10 = 27.5cm.
-   Each US size step ≈ 1.0cm of insole length. Each ZipFit size
-   range covers two US sizes. */
-const SIZE_RANGES = [
-  { code:'XS',  cm:[21.0, 23.0], mensUS:'4 – 5',    womensUS:'5.5 – 6.5' },
-  { code:'S',   cm:[23.0, 25.0], mensUS:'6 – 7',    womensUS:'7.5 – 8.5' },
-  { code:'M',   cm:[25.0, 27.0], mensUS:'8 – 9',    womensUS:'9.5 – 10.5' },
-  { code:'L',   cm:[27.0, 29.0], mensUS:'10 – 11',  womensUS:'11.5 – 12.5' },
-  { code:'XL',  cm:[29.0, 31.0], mensUS:'12 – 13',  womensUS:'13.5 – 14.5' },
-  { code:'XXL', cm:[31.0, 33.0], mensUS:'14 – 15',  womensUS:'15.5 – 16.5' },
+// ── Quiz steps ───────────────────────────────────────────────
+const STEPS = [
+  {
+    id: 'arch',
+    key: 'archType',
+    label: 'Step 1 of 5',
+    q: 'What kind of arch do you have?',
+    type: 'single',
+    layout: 'g2',
+    opts: [
+      { val:'flat',    icon:'zi-arch-flat',    label:'Flat / Low arch',   desc:'Arch nearly touches the ground' },
+      { val:'neutral', icon:'zi-arch-neutral', label:'Neutral arch',      desc:'Normal height, visible arch' },
+      { val:'high',    icon:'zi-arch-high',    label:'High arch',         desc:'Pronounced, raised arch' },
+      { val:'unsure',  icon:'zi-arch-unsure',  label:"I'm not sure",     desc:'' },
+    ],
+  },
+  {
+    id: 'pronation',
+    key: 'pronation',
+    label: 'Step 2 of 5',
+    q: 'How does your foot move when you walk or run?',
+    type: 'single',
+    layout: 'g1 list',
+    opts: [
+      { val:'over',    icon:'zi-over',          label:'I overpronate',    desc:'Foot rolls inward' },
+      { val:'sup',     icon:'zi-sup',           label:'I supinate',       desc:'Foot rolls outward' },
+      { val:'neither', icon:'zi-neutral-walk',  label:'Neither / Neutral', desc:'Normal gait' },
+      { val:'unsure',  icon:'zi-help',          label:"I don't know",    desc:'' },
+    ],
+  },
+  {
+    id: 'pain',
+    key: 'painConditions',
+    label: 'Step 3 of 5',
+    q: 'Which of these are you looking to relieve?',
+    sub: 'Select all that apply',
+    type: 'multi',
+    layout: 'g3',
+    opts: [
+      { val:'foot-pain',  icon:'zi-foot',     label:'Foot pain' },
+      { val:'ankle-pain', icon:'zi-ankle',    label:'Ankle pain' },
+      { val:'back-pain',  icon:'zi-back',     label:'Back pain' },
+      { val:'knee-pain',  icon:'zi-knee',     label:'Knee pain' },
+      { val:'plantar',    icon:'zi-plantar',  label:'Plantar fasciitis' },
+      { val:'flat-feet',  icon:'zi-flatfeet', label:'Flat feet' },
+      { val:'pron-pain',  icon:'zi-pron',     label:'Overpronation' },
+      { val:'tendinitis', icon:'zi-tendon',   label:'Tendinitis' },
+      { val:'bunions',    icon:'zi-bunion',   label:'Bunions' },
+      { val:'hamstring',  icon:'zi-hamstring',label:'Hamstring pain' },
+      { val:'morton',     icon:'zi-morton',   label:"Morton's neuroma" },
+      { val:'meta',       icon:'zi-meta',     label:'Metatarsalgia' },
+    ],
+  },
+  {
+    id: 'goals',
+    key: 'goals',
+    label: 'Step 4 of 5',
+    q: 'What are you hoping to achieve with ZipFit insoles?',
+    sub: 'Select all that apply',
+    type: 'multi',
+    layout: 'g1 list',
+    opts: [
+      { val:'pain-relief', icon:'zi-relief',  label:'Pain relief' },
+      { val:'posture',     icon:'zi-posture', label:'Improved posture' },
+      { val:'comfort',     icon:'zi-comfort', label:'Wearing shoes that are otherwise too uncomfortable' },
+      { val:'shoe-life',   icon:'zi-shoelife',label:'Extending the life of my shoes' },
+      { val:'active',      icon:'zi-run',     label:'Being more active / exercising more' },
+      { val:'save',        icon:'zi-money',   label:'Saving money on doctors / physical therapy' },
+      { val:'orthotics',   icon:'zi-ortho',   label:'Alternative to custom orthotics' },
+    ],
+  },
+  {
+    id: 'shoe',
+    key: 'shoeType',
+    label: 'Step 5 of 5',
+    q: 'What type of shoes will you primarily use these in?',
+    type: 'single',
+    layout: 'g2',
+    opts: [
+      { val:'running',    icon:'zi-shoe-run',   label:'Running / Athletic', desc:'Road, gym, or sport shoes' },
+      { val:'sneakers',   icon:'zi-shoe-sneak', label:'Sneakers / Casual',  desc:'Everyday streetwear' },
+      { val:'work-boots', icon:'zi-shoe-work',  label:'Work boots',         desc:'Blundstones, Redwing, etc.' },
+      { val:'hike-boots', icon:'zi-shoe-hike',  label:'Hiking boots',       desc:'Trail & backpacking' },
+      { val:'dress',      icon:'zi-shoe-dress', label:'Dress / Loafers',    desc:'Office or formal wear' },
+      { val:'ski-boots',  icon:'zi-shoe-ski',   label:'Ski boots',          desc:'Alpine, touring, or snowboard' },
+    ],
+  },
 ];
 
-const CM_MIN = 21.0;
-const CM_MAX = 33.0;
-const CM_STEP = 0.5;
-const CM_DEFAULT = 26.5;
+// Email is step index STEPS.length (5)
+// Result is step index STEPS.length + 1 (6)
+const EMAIL_STEP = STEPS.length;
+const RESULT_STEP = STEPS.length + 1;
+const TOTAL = RESULT_STEP; // used for progress pct
 
-function sizeForCm(cm){
-  if (cm == null) return null;
-  if (cm < SIZE_RANGES[0].cm[0]) return SIZE_RANGES[0];
-  if (cm >= SIZE_RANGES[SIZE_RANGES.length-1].cm[1]) return SIZE_RANGES[SIZE_RANGES.length-1];
-  return SIZE_RANGES.find(r => cm >= r.cm[0] && cm < r.cm[1]) || SIZE_RANGES[2];
+// ── State ────────────────────────────────────────────────────
+let step = 0;
+let answers = {};
+
+// ── Recommendation logic ─────────────────────────────────────
+function recommend() {
+  const shoe = answers.shoeType;
+  const arch = answers.archType;
+
+  if (shoe === 'work-boots') return { id:'active', why: WHY['active-work'] };
+  if (shoe === 'hike-boots') return { id:'active', why: WHY['active-hike'] };
+  if (shoe === 'ski-boots')  return { id:'active', why: WHY['active-hike'] };
+
+  if (shoe === 'running') return { id:'sport', why: WHY['sport-running'] };
+  if (arch === 'high' && (shoe === 'sneakers' || !shoe))
+    return { id:'sport', why: WHY['sport-high-arch'] };
+
+  if (shoe === 'dress') return { id:'classic', why: WHY['classic-dress'] };
+  if (shoe === 'sneakers') return { id:'classic', why: WHY['classic-sneakers'] };
+
+  return { id:'classic', why: WHY['classic-default'] };
 }
 
-/* Returns the live question for the given step (0, 1, or 2).
-   Step 1's content + key change based on the chosen activity.
-   Step 2 is a custom size picker (rendered separately). */
-function questionFor(step){
-  if (step === 0) return QUESTIONS[0];
-  if (step === 1) {
-    const sub = SHOES_BY_ACTIVITY[answers.activity];
-    return {
-      label: 'Step 2 of 3',
-      text:  sub.text,
-      key:   'shoe',
-      opts:  sub.opts,
-    };
+// ── Progress ──────────────────────────────────────────────────
+function updateProgress() {
+  const pct = step >= TOTAL ? 100 : Math.round((step / TOTAL) * 100);
+  const trail  = document.getElementById('zfqTrail');
+  const walker = document.getElementById('zfqWalker');
+  const label  = document.getElementById('zfqProgressLabel');
+  if (trail)  trail.style.width = pct + '%';
+  if (walker) walker.style.left = Math.min(pct, 96) + '%';
+  if (label) {
+    if (step === 0)           label.textContent = "Let's find your perfect insole";
+    else if (step >= TOTAL)   label.textContent = 'Your recommendation is ready!';
+    else                      label.textContent = pct + '% complete';
   }
-  return {
-    label: 'Step 3 of 3',
-    text:  'How long is your insole?',
-    key:   'insoleCm',
-  };
 }
 
-function setProgress(){
-  const total = TOTAL_STEPS;
-  const done = step;
-  const pct = step >= total ? 100 : Math.round((done / total) * 100);
-  progressFill.style.width = pct + '%';
-  progressCount.textContent = `${Math.min(done,total)} / ${total}`;
-  progressCount.setAttribute('aria-label', `Question ${Math.min(done+1,total)} of ${total}`);
-  progressWrap.hidden = false;
+// ── Render dispatcher ────────────────────────────────────────
+function render() {
+  updateProgress();
+  const body = document.getElementById('zfqBody');
+  if (step === EMAIL_STEP)  { renderEmail(body); return; }
+  if (step >= RESULT_STEP)  { renderResult(body); return; }
+  renderQuestion(body, STEPS[step]);
 }
 
-function svgUse(id, cls){
-  return `<svg class="${cls||''}" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><use href="#${id}"/></svg>`;
-}
+// ── Question step ────────────────────────────────────────────
+function renderQuestion(body, s) {
+  const isMulti = s.type === 'multi';
+  const isList  = s.layout.includes('list');
+  const sel     = answers[s.key] || (isMulti ? [] : null);
 
-function renderQuestion(){
-  intro.hidden = step > 0;
-  setProgress();
-  if (step === 2) { renderSizeStep(); return; }
-  const q = questionFor(step);
-  stage.innerHTML = `
-    <div class="zf-fade-enter" key="q${step}">
-      <div class="zf-q-label">${q.label}</div>
-      <h2 class="zf-q-text">${q.text}</h2>
-      <div class="zf-options">
-        ${q.opts.map(o => `
-          <button class="zf-opt ${answers[q.key]===o.val ? 'selected':''}" data-val="${o.val}">
-            <span class="zf-opt-icon">${svgUse(o.icon)}</span>
-            <span class="zf-opt-text">
-              <span class="zf-opt-title">${o.title}</span>
-              <span class="zf-opt-desc">${o.desc}</span>
-            </span>
-            <span class="zf-opt-check">${svgUse('i-check')}</span>
-          </button>
-        `).join('')}
-      </div>
-      <div class="zf-actions">
-        ${step > 0 ? `<button class="zf-btn zf-btn--secondary" id="zfBack" aria-label="Back">${svgUse('i-arrow-left')}</button>` : ''}
-        <button class="zf-btn" id="zfNext" ${answers[q.key] ? '' : 'disabled'}>
-          ${step === TOTAL_STEPS - 1 ? 'See my insole' : 'Next'}
-          ${svgUse('i-arrow-right')}
-        </button>
+  const optsHtml = s.opts.map(o => {
+    const isSel = isMulti ? sel.includes(o.val) : sel === o.val;
+    return `
+      <button class="zfq-opt ${isList ? 'row' : ''} ${isSel ? 'sel' : ''}" data-val="${o.val}">
+        <span class="zfq-opt-icon">${USE(o.icon)}</span>
+        <span class="zfq-opt-body">
+          <span class="zfq-opt-label">${o.label}</span>
+          ${o.desc ? `<span class="zfq-opt-desc">${o.desc}</span>` : ''}
+        </span>
+      </button>`;
+  }).join('');
+
+  const hasNext  = isMulti;
+  const nextDis  = isMulti && sel.length === 0 ? 'disabled' : '';
+
+  body.innerHTML = `
+    <div class="zfq-step-wrap">
+      <p class="zfq-qlabel">${s.label}</p>
+      <h2 class="zfq-qtitle">${s.q}</h2>
+      ${s.sub ? `<p class="zfq-qsub">${s.sub}</p>` : ''}
+      <div class="zfq-opts ${s.layout}">${optsHtml}</div>
+      <div class="zfq-actions">
+        ${step > 0 ? `<button class="zfq-btn-back" id="zfqBack">${USE('zi-arrow-l')} Back</button>` : ''}
+        ${hasNext ? `<button class="zfq-btn-next" id="zfqNext" ${nextDis}>Next ${USE('zi-arrow-r')}</button>` : ''}
       </div>
     </div>`;
 
-  // Option click
-  stage.querySelectorAll('.zf-opt').forEach(el => {
-    el.addEventListener('click', () => {
-      const newVal = el.dataset.val;
-      // If activity changes, invalidate the downstream shoe answer.
-      if (q.key === 'activity' && answers.activity && answers.activity !== newVal) {
-        delete answers.shoe;
-      }
-      answers[q.key] = newVal;
-      stage.querySelectorAll('.zf-opt').forEach(e => e.classList.remove('selected'));
-      el.classList.add('selected');
-      document.getElementById('zfNext').removeAttribute('disabled');
-    });
+  body.querySelectorAll('.zfq-opt').forEach(card => {
+    card.addEventListener('click', () => onOption(card, s));
   });
-
-  document.getElementById('zfNext').addEventListener('click', () => {
-    if (!answers[q.key]) return;
-    step++;
-    if (step >= TOTAL_STEPS) renderResult();
-    else renderQuestion();
-  });
-  const back = document.getElementById('zfBack');
-  if (back) back.addEventListener('click', () => { step--; renderQuestion(); });
+  document.getElementById('zfqNext')?.addEventListener('click', () => { step++; render(); });
+  document.getElementById('zfqBack')?.addEventListener('click', () => { step--; render(); });
 }
 
-/* ============================================================
-   STEP 3 — MEASURE INSOLE LENGTH IN CM
-   ============================================================ */
-function renderSizeStep(){
-  if (answers.insoleCm == null) answers.insoleCm = CM_DEFAULT;
-  const cm = answers.insoleCm;
-  const range = sizeForCm(cm);
-  const pct = ((cm - CM_MIN) / (CM_MAX - CM_MIN)) * 100;
+function onOption(card, s) {
+  const val     = card.dataset.val;
+  const isMulti = s.type === 'multi';
 
-  stage.innerHTML = `
-    <div class="zf-fade-enter" key="q2">
-      <div class="zf-q-label">Step 3 of 3</div>
-      <h2 class="zf-q-text">How long is your insole?</h2>
+  if (isMulti) {
+    if (!answers[s.key]) answers[s.key] = [];
+    const arr = answers[s.key];
+    const idx = arr.indexOf(val);
+    if (idx > -1) { arr.splice(idx, 1); card.classList.remove('sel'); }
+    else           { arr.push(val);      card.classList.add('sel'); }
+    const btn = document.getElementById('zfqNext');
+    if (btn) btn.disabled = arr.length === 0;
+  } else {
+    answers[s.key] = val;
+    document.querySelectorAll('.zfq-opt').forEach(c => c.classList.remove('sel'));
+    card.classList.add('sel');
+    setTimeout(() => { step++; render(); }, 220);
+  }
+}
 
-      <div class="zf-size-wrap">
-        <div class="zf-measure-illus">
-          <svg viewBox="0 0 140 70" aria-hidden="true">
-            <!-- Insole silhouette: heel left, toe right -->
-            <path d="M14 38 C 14 26, 22 21, 34 21 L 100 21 C 118 21, 128 27, 128 38 C 128 49, 116 54, 100 54 L 34 54 C 22 54, 14 50, 14 38 Z"
-              fill="#272727" opacity="0.08"/>
-            <path d="M14 38 C 14 26, 22 21, 34 21 L 100 21 C 118 21, 128 27, 128 38 C 128 49, 116 54, 100 54 L 34 54 C 22 54, 14 50, 14 38 Z"
-              fill="none" stroke="#272727" stroke-width="1.5"/>
-            <!-- Measure arrows -->
-            <line x1="14" y1="63" x2="128" y2="63" stroke="#EF4623" stroke-width="1.5"/>
-            <line x1="14" y1="59" x2="14" y2="67" stroke="#EF4623" stroke-width="1.5"/>
-            <line x1="128" y1="59" x2="128" y2="67" stroke="#EF4623" stroke-width="1.5"/>
-            <polyline points="18,60 14,63 18,66" fill="none" stroke="#EF4623" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-            <polyline points="124,60 128,63 124,66" fill="none" stroke="#EF4623" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-            <!-- Tick on heel/toe -->
-            <line x1="14" y1="15" x2="14" y2="60" stroke="#272727" stroke-width="0.5" stroke-dasharray="2 2" opacity="0.4"/>
-            <line x1="128" y1="15" x2="128" y2="60" stroke="#272727" stroke-width="0.5" stroke-dasharray="2 2" opacity="0.4"/>
-          </svg>
-          <div class="zf-measure-text">
-            <b>Pull the insole out of your shoe</b>
-            <span>Lay it flat and measure heel to toe in centimeters.</span>
-          </div>
-        </div>
-
-        <div class="zf-readout">
-          <div class="zf-readout-cm" id="zfCmReadout">${cm.toFixed(1)}<span class="unit">cm</span></div>
-          <div class="zf-readout-size">
-            <div class="lbl">Your ZipFit size</div>
-            <div class="val" id="zfSizeReadout">US M ${range.mensUS}<span class="us">Women's ${range.womensUS}</span></div>
-          </div>
-        </div>
-
-        <div class="zf-stepper">
-          <button class="zf-step-btn" id="zfMinus" aria-label="Decrease length">
-            <svg viewBox="0 0 24 24"><path d="M5 12h14"/></svg>
-          </button>
-          <div class="zf-slider-wrap">
-            <div class="zf-slider-track"><div class="zf-slider-fill" id="zfFill" style="width:${pct}%"></div></div>
-            <input type="range" class="zf-slider" id="zfSlider"
-              min="${CM_MIN}" max="${CM_MAX}" step="${CM_STEP}" value="${cm}"
-              aria-label="Insole length in centimeters">
-          </div>
-          <button class="zf-step-btn" id="zfPlus" aria-label="Increase length">
-            <svg viewBox="0 0 24 24"><path d="M5 12h14"/><path d="M12 5v14"/></svg>
-          </button>
-        </div>
-        <div class="zf-slider-ticks">
-          <span>21cm</span><span>24</span><span>26</span><span>28</span><span>30</span><span>33cm</span>
-        </div>
-
-        <p class="zf-size-help">
-          <b>Why measure?</b> ZipFit insoles come in size ranges and trim to fit. Measuring your existing insole is the most accurate way to match.
-        </p>
+// ── Email step ───────────────────────────────────────────────
+function renderEmail(body) {
+  body.innerHTML = `
+    <div class="zfq-step-wrap zfq-email-wrap">
+      <span class="zfq-email-badge">${USE('zi-gift')} 10% off your first order</span>
+      <h2 class="zfq-qtitle">Get 10% off your first order!</h2>
+      <p class="zfq-qsub">Enter your email and we'll send your discount code along with your personalised recommendation.</p>
+      <input type="email" class="zfq-email-input" id="zfqEmail"
+             placeholder="yourname@email.com" autocomplete="email">
+      <button class="zfq-btn-email" id="zfqBtnEmail">
+        Claim My 10% Off ${USE('zi-arrow-r')}
+      </button>
+      <div class="zfq-actions" style="justify-content:flex-start">
+        <button class="zfq-btn-back" id="zfqBack">${USE('zi-arrow-l')} Back</button>
       </div>
-
-      <div class="zf-actions">
-        <button class="zf-btn zf-btn--secondary" id="zfBack" aria-label="Back">${svgUse('i-arrow-left')}</button>
-        <button class="zf-btn" id="zfNext">
-          See my insole
-          ${svgUse('i-arrow-right')}
-        </button>
-      </div>
+      <button class="zfq-skip" id="zfqSkip">Skip and see my result →</button>
     </div>`;
 
-  const slider = document.getElementById('zfSlider');
-  const fill = document.getElementById('zfFill');
-  const cmOut = document.getElementById('zfCmReadout');
-  const sizeOut = document.getElementById('zfSizeReadout');
-
-  const updateUI = (v) => {
-    answers.insoleCm = v;
-    const r = sizeForCm(v);
-    const p = ((v - CM_MIN) / (CM_MAX - CM_MIN)) * 100;
-    fill.style.width = p + '%';
-    cmOut.innerHTML = `${v.toFixed(1)}<span class="unit">cm</span>`;
-    sizeOut.innerHTML = `US M ${r.mensUS}<span class="us">Women's ${r.womensUS}</span>`;
-  };
-
-  slider.addEventListener('input', (e) => {
-    updateUI(parseFloat(e.target.value));
+  document.getElementById('zfqBtnEmail').addEventListener('click', () => {
+    const v = document.getElementById('zfqEmail').value.trim();
+    if (v) answers.email = v;
+    step++; render();
   });
-
-  const bump = (delta) => {
-    let v = Math.round((answers.insoleCm + delta) / CM_STEP) * CM_STEP;
-    v = Math.max(CM_MIN, Math.min(CM_MAX, v));
-    slider.value = v;
-    updateUI(v);
-  };
-  document.getElementById('zfMinus').addEventListener('click', () => bump(-CM_STEP));
-  document.getElementById('zfPlus').addEventListener('click', () => bump(+CM_STEP));
-
-  document.getElementById('zfNext').addEventListener('click', () => {
-    step++;
-    renderResult();
-  });
-  document.getElementById('zfBack').addEventListener('click', () => { step--; renderQuestion(); });
+  document.getElementById('zfqBack').addEventListener('click', () => { step--; render(); });
+  document.getElementById('zfqSkip').addEventListener('click', () => { step++; render(); });
 }
 
-function renderResult(){
-  intro.hidden = true;
-  setProgress();
-  const { id, why } = recommend(answers);
+// ── Result step ──────────────────────────────────────────────
+function renderResult(body) {
+  const { id, why } = recommend();
   const p = PRODUCTS[id];
-  const sizeRange = sizeForCm(answers.insoleCm);
+  const base = window.SHOPIFY_BASE_URL || 'https://zipfit.com';
+  const url  = `${base}/products/${p.handle}`;
 
-  // Build the Shopify-ready product URL.
-  // In a live storefront, /products/{handle} resolves to the product page.
-  // Override SHOPIFY_BASE_URL to point at a specific shop while testing.
-  const baseUrl = window.SHOPIFY_BASE_URL || 'https://zipfit.com';
-  const productUrl = `${baseUrl}/products/${p.handle}`;
-
-  stage.innerHTML = `
-    <div class="zf-result">
-      <div class="zf-result-eyebrow"><span class="dot"></span> Your best match</div>
-      <div class="zf-card">
-        <div class="zf-card-hero">
-          <div class="zf-card-photo">
-            <img src="${p.image}" alt="${p.name} insole" loading="eager">
+  body.innerHTML = `
+    <div class="zfq-step-wrap">
+      <div class="zfq-result-eyebrow"><span class="dot"></span> Your best match</div>
+      <h2 class="zfq-result-title">We found your perfect ZipFit!</h2>
+      <div class="zfq-prod-card">
+        <div class="zfq-prod-img">
+          <img src="${p.img}" alt="${p.name} insole">
+        </div>
+        <div class="zfq-prod-body">
+          <p class="zfq-prod-tag">ZipFit Insoles · Made in Italy</p>
+          <h3 class="zfq-prod-name">${p.name}</h3>
+          <p class="zfq-prod-desc">${p.tagline}</p>
+          <div class="zfq-prod-why">
+            <p class="zfq-prod-why-lbl">Why the ${p.name.replace('ZipFit ','')}</p>
+            ${why}
           </div>
-          <div class="zf-card-meta">
-            <div class="zf-card-hero-text">
-              <div class="zf-card-tag">ZipFit Insoles · Made in Italy</div>
-              <h2 class="zf-card-name">${p.name}</h2>
-            </div>
-            <div class="zf-card-pricepill">${p.price}<small>USD</small></div>
-          </div>
-          <div style="height:20px;background:var(--zf-bg)"></div>
-        </div>
-
-        <div class="zf-size-line">
-          <span class="zf-size-pill">US M ${sizeRange.mensUS}<small>${answers.insoleCm.toFixed(1)} cm insole</small></span>
-          <span class="your-size">Women's US ${sizeRange.womensUS}</span>
-        </div>
-
-        <p class="zf-card-tagline">${p.tagline}</p>
-
-        <ul class="zf-spec-list">
-          <li class="zf-spec"><span class="zf-spec-key">Material</span><span class="zf-spec-val">${p.material}</span></li>
-          <li class="zf-spec"><span class="zf-spec-key">Best for</span><span class="zf-spec-val">${p.bestFor}</span></li>
-          <li class="zf-spec"><span class="zf-spec-key">Profile</span><span class="zf-spec-val">${p.profile}</span></li>
-        </ul>
-
-        <div class="zf-badges">${p.badges.map(b => `<span class="zf-badge">${b}</span>`).join('')}</div>
-
-        <div class="zf-why">
-          <div class="zf-why-label">Why the ${p.name}</div>
-          ${why}
-        </div>
-
-        <div class="zf-result-actions">
-          <a class="zf-shop" href="${productUrl}" id="zfShopBtn" target="_top">
-            Shop the ${p.name}
-            ${svgUse('i-arrow-right')}
+          <p class="zfq-prod-price">${p.price} <small style="font-size:12px;font-weight:500;color:#888">USD</small></p>
+          <a class="zfq-btn-shop" href="${url}" id="zfqShopBtn" target="_top">
+            Shop the ${p.name} ${USE('zi-arrow-r')}
           </a>
-          <div class="zf-result-nav">
-            <button class="zf-restart" id="zfBackResult" type="button">
-              <svg viewBox="0 0 24 24"><path d="M19 12H5"/><path d="m11 5-7 7 7 7"/></svg>
-              Edit my answers
-            </button>
-            <button class="zf-restart" id="zfRestart" type="button">Start over</button>
-          </div>
+        </div>
+        <div class="zfq-result-nav">
+          <button class="zfq-nav-btn" id="zfqEditAnswers">
+            ${USE('zi-edit')} Edit answers
+          </button>
+          <button class="zfq-nav-btn" id="zfqRestart">
+            ${USE('zi-reload')} Start over
+          </button>
         </div>
       </div>
-
-      <div class="zf-trust">
-        <div class="zf-trust-item">${svgUse('i-italy')}<span>Made in Italy</span></div>
-        <div class="zf-trust-item">${svgUse('i-clock')}<span>Since 1989</span></div>
-        <div class="zf-trust-item">${svgUse('i-leaf')}<span>OMFit Cork</span></div>
+      <div class="zfq-trust">
+        <div class="zfq-trust-item">${USE('zi-italy')}<span>Made in Italy</span></div>
+        <div class="zfq-trust-item">${USE('zi-clock')}<span>Since 1989</span></div>
+        <div class="zfq-trust-item">${USE('zi-leaf')}<span>Cork Insoles</span></div>
       </div>
     </div>`;
 
-  document.getElementById('zfRestart').addEventListener('click', () => {
-    answers = {}; step = 0; progressWrap.hidden = false; renderQuestion();
+  document.getElementById('zfqRestart').addEventListener('click', () => {
+    answers = {}; step = 0; render();
   });
-  document.getElementById('zfBackResult').addEventListener('click', () => {
-    step = TOTAL_STEPS - 1;
-    renderQuestion();
+  document.getElementById('zfqEditAnswers').addEventListener('click', () => {
+    step = EMAIL_STEP - 1; render();
   });
 
-  // Emit a CustomEvent so the storefront can hook analytics
+  // Analytics hook
   document.dispatchEvent(new CustomEvent('zf:recommend', {
     detail: { product: p.handle, answers: { ...answers } }
   }));
 }
 
-// Boot
-renderQuestion();
+// ── Boot ─────────────────────────────────────────────────────
+document.getElementById('zfqClose').addEventListener('click', () => {
+  if (window.parent && window.parent !== window) {
+    window.parent.postMessage({ type: 'zf:quiz:close' }, '*');
+  }
+  // Fallback: reset quiz to start
+  answers = {}; step = 0; render();
+});
+
+render();
 </script>
+
 </body>
 </html>
