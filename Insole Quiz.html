@@ -44,10 +44,11 @@ body{
 .zfq-card{
   background:#fff;
   border-radius:20px;
-  width:100%;
+  width:min(540px,100vmin);
   max-width:540px;
+  aspect-ratio:1;
+  overflow-y:auto;
   box-shadow:0 8px 48px rgba(0,0,0,0.10);
-  overflow:hidden;
   position:relative;
 }
 .zfq-card::before{
@@ -57,7 +58,7 @@ body{
   background:linear-gradient(90deg,#EF4623 0%,#FBCF21 20%,#68BD46 40%,#5DC7D1 60%,#2F438F 80%,#952A7D 100%);
 }
 
-/* ── top bar ───────────────────────────────────────────── */
+/* ── top bar ────────────────────────────────────────────── */
 .zfq-topbar{
   display:flex;
   align-items:center;
@@ -275,7 +276,7 @@ body{
   line-height:1.3;
 }
 
-/* ── actions ───────────────────────────────────────────── */
+/* ── actions ─────────────────────────────────────────────── */
 .zfq-actions{
   display:flex;
   gap:10px;
@@ -314,7 +315,7 @@ body{
 .zfq-btn-back svg{width:16px;height:16px;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;fill:none}
 
 
-/* ── result page ────────────────────────────────────────── */
+/* ── result page ─────────────────────────────────────────── */
 .zfq-result-eyebrow{
   display:flex;align-items:center;gap:8px;
   font-size:11px;font-weight:600;
@@ -473,7 +474,7 @@ body{
 /* ── responsive ──────────────────────────────────────────── */
 @media (max-width:500px){
   body{padding:0;align-items:stretch}
-  .zfq-card{border-radius:0;min-height:100vh;box-shadow:none}
+  .zfq-card{border-radius:0;width:100vmin;aspect-ratio:1;box-shadow:none}
 }
 @media (max-width:380px){
   .zfq-opts.g3{grid-template-columns:1fr 1fr}
@@ -499,7 +500,7 @@ body{
         <path d="M7 8h10l-7 8h7" stroke="url(#zfqGrad)" stroke-width="2"
               stroke-linecap="round" stroke-linejoin="round"/>
       </svg>
-      ZipFit<sup>&#174;</sup>
+      ZipFit<sup>®</sup>
     </a>
     <button class="zfq-close" id="zfqClose" aria-label="Close quiz">
       <svg viewBox="0 0 16 16"><path d="M2 2l12 12M14 2L2 14"/></svg>
@@ -753,11 +754,11 @@ body{
    ZipFit Insole Quiz
    ============================================================ */
 
-// ── Helpers ───────────────────────────────────────────────
+// ── Helpers ─────────────────────────────────────────────────
 const USE = (id) =>
   `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><use href="#${id}"/></svg>`;
 
-// ── Products ───────────────────────────────────────────────
+// ── Products ─────────────────────────────────────────────────
 const PRODUCTS = {
   zippy: {
     id: 'zippy', handle: 'zippy', name: 'ZipFit Zippy', price: '$60', img: 'zippy.webp',
@@ -1027,12 +1028,12 @@ const PAIN_COPY = {
   'tendinitis':  'Tendinitis — shock absorption and stable alignment reduce the repetitive stress that inflames tendons.',
   'bunions':     'Bunions — correct foot positioning reduces the pressure on the first metatarsal joint that worsens bunions.',
   'hamstring':   'Hamstring pain — leg-length discrepancies and poor foot mechanics can pull the hamstring; proper insoles restore balance.',
-  'hip-pain':    'Hip pain — poor foot mechanics cause the pelvis to tilt and rotate unevenly; ZipFit restores neutral alignment from the ground up, reducing strain on the hip joint.',
   'morton':      'Morton\'s neuroma — metatarsal support spreads the forefoot and relieves the nerve compression behind the toes.',
   'meta':        'Metatarsalgia — a supportive insole shifts load away from the ball of the foot, easing forefoot pain.',
+  'hip-pain':    'Hip pain — poor foot mechanics cause the pelvis to tilt and rotate unevenly; ZipFit restores neutral alignment from the ground up, reducing strain on the hip joint.',
 };
 
-// ── Result step ────────────────────────────────────────────
+// ── Result step ──────────────────────────────────────────────
 function renderResult(body) {
   const { id, why } = recommend();
   const p = PRODUCTS[id];
@@ -1065,7 +1066,7 @@ function renderResult(body) {
           <p style="font-size:15px;font-weight:600;color:#EF4623;margin:0 0 8px;line-height:1.3">${p.tagline}</p>
           <p class="zfq-prod-desc">${p.desc}</p>
           <ul style="margin:0 0 12px;padding:0;list-style:none;display:flex;flex-direction:column;gap:6px">
-            ${p.features.map(f => `<li style="font-size:13px;color:#444;line-height:1.45;padding-left:18px;position:relative"><span style="position:absolute;left:0;color:#EF4623;font-weight:700">&#10003;</span>${f}</li>`).join('')}
+            ${p.features.map(f => `<li style="font-size:13px;color:#444;line-height:1.45;padding-left:18px;position:relative"><span style="position:absolute;left:0;color:#EF4623;font-weight:700">✓</span>${f}</li>`).join('')}
           </ul>
           <p style="font-size:12px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;margin:0 0 14px;color:#888"><span style="color:#1a1a1a">Best for:</span> ${p.bestFor}</p>
           ${painHtml}
