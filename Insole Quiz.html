@@ -197,6 +197,7 @@ body{
   display:flex;
   flex-direction:column;
   align-items:center;
+  justify-content:center;
   text-align:center;
   gap:8px;
   padding:14px 10px 13px;
@@ -205,7 +206,7 @@ body{
   border-radius:12px;
   transition:border-color .15s,box-shadow .15s,transform .1s;
   -webkit-tap-highlight-color:transparent;
-  min-height:76px;
+  aspect-ratio:1;
 }
 .zfq-opt:hover{border-color:#bbb}
 .zfq-opt.sel{
@@ -218,16 +219,18 @@ body{
 /* list-style variant */
 .zfq-opt.row{
   flex-direction:row;
+  align-items:center;
+  justify-content:flex-start;
   text-align:left;
   gap:12px;
-  padding:12px 14px;
-  min-height:52px;
+  padding:14px 16px;
+  aspect-ratio:auto;
+  min-height:54px;
 }
 
 /* pain-grid small cards */
 .zfq-opts.g3 .zfq-opt{
   padding:10px 6px 9px;
-  min-height:62px;
   gap:6px;
 }
 
@@ -256,7 +259,7 @@ body{
 .zfq-opt.row.sel .zfq-opt-icon{background:#EF4623;color:#fff}
 
 /* text */
-.zfq-opt-body{display:flex;flex-direction:column;flex:1;min-width:0}
+.zfq-opt-body{display:flex;flex-direction:column;justify-content:center;flex:1;min-width:0}
 .zfq-opt-label{
   font-size:13px;
   font-weight:600;
@@ -473,7 +476,6 @@ body{
   .zfq-card{border-radius:0;min-height:100vh;box-shadow:none}
 }
 @media (max-width:380px){
-  .zfq-opts.g2{grid-template-columns:1fr}
   .zfq-opts.g3{grid-template-columns:1fr 1fr}
 }
 </style>
@@ -964,7 +966,6 @@ function renderQuestion(body, s) {
     const isSel = isMulti ? sel.includes(o.val) : sel === o.val;
     return `
       <button class="zfq-opt ${isList ? 'row' : ''} ${isSel ? 'sel' : ''}" data-val="${o.val}">
-        <span class="zfq-opt-icon">${USE(o.icon)}</span>
         <span class="zfq-opt-body">
           <span class="zfq-opt-label">${o.label}</span>
           ${o.desc ? `<span class="zfq-opt-desc">${o.desc}</span>` : ''}
