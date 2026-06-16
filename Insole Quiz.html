@@ -44,10 +44,11 @@ body{
 .zfq-card{
   background:#fff;
   border-radius:20px;
-  width:100%;
+  width:min(540px,100vmin);
   max-width:540px;
+  aspect-ratio:1;
+  overflow-y:auto;
   box-shadow:0 8px 48px rgba(0,0,0,0.10);
-  overflow:hidden;
   position:relative;
 }
 .zfq-card::before{
@@ -473,7 +474,7 @@ body{
 /* ── responsive ──────────────────────────────────────────── */
 @media (max-width:500px){
   body{padding:0;align-items:stretch}
-  .zfq-card{border-radius:0;min-height:100vh;box-shadow:none}
+  .zfq-card{border-radius:0;width:100vmin;aspect-ratio:1;box-shadow:none}
 }
 @media (max-width:380px){
   .zfq-opts.g3{grid-template-columns:1fr 1fr}
