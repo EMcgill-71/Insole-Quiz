@@ -57,7 +57,7 @@ body{
   background:linear-gradient(90deg,#EF4623 0%,#FBCF21 20%,#68BD46 40%,#5DC7D1 60%,#2F438F 80%,#952A7D 100%);
 }
 
-/* ── top bar ────────────────────────────────────────────── */
+/* ── top bar ───────────────────────────────────────────── */
 .zfq-topbar{
   display:flex;
   align-items:center;
@@ -272,7 +272,7 @@ body{
   line-height:1.3;
 }
 
-/* ── actions ─────────────────────────────────────────────── */
+/* ── actions ───────────────────────────────────────────── */
 .zfq-actions{
   display:flex;
   gap:10px;
@@ -311,7 +311,7 @@ body{
 .zfq-btn-back svg{width:16px;height:16px;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;fill:none}
 
 
-/* ── result page ─────────────────────────────────────────── */
+/* ── result page ────────────────────────────────────────── */
 .zfq-result-eyebrow{
   display:flex;align-items:center;gap:8px;
   font-size:11px;font-weight:600;
@@ -751,7 +751,7 @@ body{
    ZipFit Insole Quiz
    ============================================================ */
 
-// ── Helpers ─────────────────────────────────────────────────
+// ── Helpers ───────────────────────────────────────────────
 const USE = (id) =>
   `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><use href="#${id}"/></svg>`;
 
@@ -872,12 +872,12 @@ const STEPS = [
     layout: 'g1 list',
     opts: [
       { val:'pain-relief', icon:'zi-relief',  label:'Pain relief' },
-      { val:'posture',     icon:'zi-posture', label:'Improved posture' },
-      { val:'comfort',     icon:'zi-comfort', label:'Wearing shoes that are otherwise too uncomfortable' },
-      { val:'shoe-life',   icon:'zi-shoelife',label:'Extending the life of my shoes' },
-      { val:'active',      icon:'zi-run',     label:'Being more active / exercising more' },
-      { val:'save',        icon:'zi-money',   label:'Saving money on doctors / physical therapy' },
-      { val:'orthotics',   icon:'zi-ortho',   label:'Alternative to custom orthotics' },
+      { val:'posture',     icon:'zi-posture', label:'Better posture' },
+      { val:'comfort',     icon:'zi-comfort', label:'More comfortable shoes' },
+      { val:'shoe-life',   icon:'zi-shoelife',label:'Extend shoe life' },
+      { val:'active',      icon:'zi-run',     label:'Stay more active' },
+      { val:'save',        icon:'zi-money',   label:'Save on doctor / PT bills' },
+      { val:'orthotics',   icon:'zi-ortho',   label:'Orthotics alternative' },
     ],
   },
   {
@@ -1032,7 +1032,7 @@ const PAIN_COPY = {
   'meta':        'Metatarsalgia — a supportive insole shifts load away from the ball of the foot, easing forefoot pain.',
 };
 
-// ── Result step ──────────────────────────────────────────────
+// ── Result step ────────────────────────────────────────────
 function renderResult(body) {
   const { id, why } = recommend();
   const p = PRODUCTS[id];
