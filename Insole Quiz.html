@@ -197,6 +197,7 @@ body{
   display:flex;
   flex-direction:column;
   align-items:center;
+  justify-content:center;
   text-align:center;
   gap:8px;
   padding:14px 10px 13px;
@@ -205,7 +206,7 @@ body{
   border-radius:12px;
   transition:border-color .15s,box-shadow .15s,transform .1s;
   -webkit-tap-highlight-color:transparent;
-  min-height:76px;
+  aspect-ratio:1;
 }
 .zfq-opt:hover{border-color:#bbb}
 .zfq-opt.sel{
@@ -218,16 +219,18 @@ body{
 /* list-style variant */
 .zfq-opt.row{
   flex-direction:row;
+  align-items:center;
+  justify-content:flex-start;
   text-align:left;
   gap:12px;
-  padding:12px 14px;
-  min-height:52px;
+  padding:14px 16px;
+  aspect-ratio:auto;
+  min-height:54px;
 }
 
 /* pain-grid small cards */
 .zfq-opts.g3 .zfq-opt{
   padding:10px 6px 9px;
-  min-height:62px;
   gap:6px;
 }
 
@@ -256,7 +259,7 @@ body{
 .zfq-opt.row.sel .zfq-opt-icon{background:#EF4623;color:#fff}
 
 /* text */
-.zfq-opt-body{display:flex;flex-direction:column;flex:1;min-width:0}
+.zfq-opt-body{display:flex;flex-direction:column;justify-content:center;flex:1;min-width:0}
 .zfq-opt-label{
   font-size:13px;
   font-weight:600;
@@ -311,7 +314,7 @@ body{
 .zfq-btn-back svg{width:16px;height:16px;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;fill:none}
 
 
-/* ── result page ──────────────────────────────────────── */
+/* ── result page ────────────────────────────────────────── */
 .zfq-result-eyebrow{
   display:flex;align-items:center;gap:8px;
   font-size:11px;font-weight:600;
@@ -473,7 +476,6 @@ body{
   .zfq-card{border-radius:0;min-height:100vh;box-shadow:none}
 }
 @media (max-width:380px){
-  .zfq-opts.g2{grid-template-columns:1fr}
   .zfq-opts.g3{grid-template-columns:1fr 1fr}
 }
 </style>
@@ -755,7 +757,7 @@ body{
 const USE = (id) =>
   `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><use href="#${id}"/></svg>`;
 
-// ── Products ─────────────────────────────────────────────────
+// ── Products ───────────────────────────────────────────────
 const PRODUCTS = {
   zippy: {
     id: 'zippy', handle: 'zippy', name: 'ZipFit Zippy', price: '$60', img: 'zippy.webp',
@@ -817,10 +819,10 @@ const STEPS = [
     type: 'single',
     layout: 'g2',
     opts: [
-      { val:'flat',    icon:'zi-arch-flat',    label:'Flat / Low arch',   desc:'Arch nearly touches the ground' },
-      { val:'neutral', icon:'zi-arch-neutral', label:'Neutral arch',      desc:'Normal height, visible arch' },
-      { val:'high',    icon:'zi-arch-high',    label:'High arch',         desc:'Pronounced, raised arch' },
-      { val:'unsure',  icon:'zi-arch-unsure',  label:"I'm not sure",     desc:'' },
+      { val:'flat',    label:'Flat / Low arch',   desc:'Arch nearly touches the ground' },
+      { val:'neutral', label:'Neutral arch',      desc:'Normal height, visible arch' },
+      { val:'high',    label:'High arch',         desc:'Pronounced, raised arch' },
+      { val:'unsure',  label:"I'm not sure",     desc:'' },
     ],
   },
   {
@@ -831,10 +833,10 @@ const STEPS = [
     type: 'single',
     layout: 'g1 list',
     opts: [
-      { val:'over',    icon:'zi-over',          label:'I overpronate',    desc:'Foot rolls inward' },
-      { val:'sup',     icon:'zi-sup',           label:'I supinate',       desc:'Foot rolls outward' },
-      { val:'neither', icon:'zi-neutral-walk',  label:'Neither / Neutral', desc:'Normal gait' },
-      { val:'unsure',  icon:'zi-help',          label:"I don't know",    desc:'' },
+      { val:'over',    label:'I overpronate',    desc:'Foot rolls inward' },
+      { val:'sup',     label:'I supinate',       desc:'Foot rolls outward' },
+      { val:'neither', label:'Neither / Neutral', desc:'Normal gait' },
+      { val:'unsure',  label:"I don't know",    desc:'' },
     ],
   },
   {
@@ -846,20 +848,20 @@ const STEPS = [
     type: 'multi',
     layout: 'g3',
     opts: [
-      { val:'foot-pain',  icon:'zi-foot',     label:'Foot pain' },
-      { val:'ankle-pain', icon:'zi-ankle',    label:'Ankle pain' },
-      { val:'back-pain',  icon:'zi-back',     label:'Back pain' },
-      { val:'knee-pain',  icon:'zi-knee',     label:'Knee pain' },
-      { val:'plantar',    icon:'zi-plantar',  label:'Plantar fasciitis' },
-      { val:'flat-feet',  icon:'zi-flatfeet', label:'Flat feet' },
-      { val:'pron-pain',  icon:'zi-pron',     label:'Overpronation' },
-      { val:'tendinitis', icon:'zi-tendon',   label:'Tendinitis' },
-      { val:'bunions',    icon:'zi-bunion',   label:'Bunions' },
-      { val:'hamstring',  icon:'zi-hamstring',label:'Hamstring pain' },
-      { val:'hip-pain',   icon:'zi-hip',      label:'Hip pain' },
-      { val:'morton',     icon:'zi-morton',   label:"Morton's neuroma" },
-      { val:'meta',       icon:'zi-meta',     label:'Metatarsalgia' },
-      { val:'none',       icon:'zi-relief',   label:'No major issues' },
+      { val:'foot-pain',  label:'Foot pain' },
+      { val:'ankle-pain', label:'Ankle pain' },
+      { val:'back-pain',  label:'Back pain' },
+      { val:'knee-pain',  label:'Knee pain' },
+      { val:'plantar',    label:'Plantar fasciitis' },
+      { val:'flat-feet',  label:'Flat feet' },
+      { val:'pron-pain',  label:'Overpronation' },
+      { val:'tendinitis', label:'Tendinitis' },
+      { val:'bunions',    label:'Bunions' },
+      { val:'hamstring',  label:'Hamstring pain' },
+      { val:'hip-pain',   label:'Hip pain' },
+      { val:'morton',     label:"Morton's neuroma" },
+      { val:'meta',       label:'Metatarsalgia' },
+      { val:'none',       label:'No major issues' },
     ],
   },
   {
@@ -871,12 +873,12 @@ const STEPS = [
     type: 'multi',
     layout: 'g1 list',
     opts: [
-      { val:'pain-relief', icon:'zi-relief',  label:'Pain relief' },
-      { val:'posture',     icon:'zi-posture', label:'Better posture' },
-      { val:'comfort',     icon:'zi-comfort', label:'More comfortable shoes' },
-      { val:'shoe-life',   icon:'zi-shoelife',label:'Extend shoe life' },
-      { val:'active',      icon:'zi-run',     label:'Stay more active' },
-      { val:'orthotics',   icon:'zi-ortho',   label:'Orthotics alternative' },
+      { val:'pain-relief', label:'Pain relief' },
+      { val:'posture',     label:'Better posture' },
+      { val:'comfort',     label:'More comfortable shoes' },
+      { val:'shoe-life',   label:'Extend shoe life' },
+      { val:'active',      label:'Stay more active' },
+      { val:'orthotics',   label:'Orthotics alternative' },
     ],
   },
   {
@@ -887,12 +889,12 @@ const STEPS = [
     type: 'single',
     layout: 'g2',
     opts: [
-      { val:'running',    icon:'zi-shoe-run',   label:'Running / Athletic', desc:'Road, gym, or sport shoes' },
-      { val:'sneakers',   icon:'zi-shoe-sneak', label:'Sneakers / Casual',  desc:'Everyday streetwear' },
-      { val:'work-boots', icon:'zi-shoe-work',  label:'Work boots',         desc:'Blundstones, Redwing, etc.' },
-      { val:'hike-boots', icon:'zi-shoe-hike',  label:'Hiking boots',       desc:'Trail & backpacking' },
-      { val:'dress',      icon:'zi-shoe-dress', label:'Dress / Loafers',    desc:'Office or formal wear' },
-      { val:'ski-boots',  icon:'zi-shoe-ski',   label:'Ski boots',          desc:'Alpine, touring, or snowboard' },
+      { val:'running',    label:'Running / Athletic', desc:'Road, gym, or sport shoes' },
+      { val:'sneakers',   label:'Sneakers / Casual',  desc:'Everyday streetwear' },
+      { val:'work-boots', label:'Work boots',         desc:'Blundstones, Redwing, etc.' },
+      { val:'hike-boots', label:'Hiking boots',       desc:'Trail & backpacking' },
+      { val:'dress',      label:'Dress / Loafers',    desc:'Office or formal wear' },
+      { val:'ski-boots',  label:'Ski boots',          desc:'Alpine, touring, or snowboard' },
     ],
   },
 ];
@@ -964,7 +966,6 @@ function renderQuestion(body, s) {
     const isSel = isMulti ? sel.includes(o.val) : sel === o.val;
     return `
       <button class="zfq-opt ${isList ? 'row' : ''} ${isSel ? 'sel' : ''}" data-val="${o.val}">
-        <span class="zfq-opt-icon">${USE(o.icon)}</span>
         <span class="zfq-opt-body">
           <span class="zfq-opt-label">${o.label}</span>
           ${o.desc ? `<span class="zfq-opt-desc">${o.desc}</span>` : ''}
