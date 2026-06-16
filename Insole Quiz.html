@@ -736,28 +736,43 @@ const USE = (id) =>
   `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><use href="#${id}"/></svg>`;
 
 const PRODUCTS = {
-  classic: {
-    id: 'classic', handle: 'legacy', name: 'ZipFit Classic', price: '$66', img: 'legacy.webp',
-    tagline: 'Tried and trusted for 30+ years. Natural leather breaks in over time for a customized fit in any shoe.',
+  zippy: {
+    id: 'zippy', handle: 'zippy', name: 'ZipFit Zippy', price: '$60', img: 'zippy.webp',
+    tagline: 'Our lightest, most accessible cork insole. The perfect everyday upgrade for flat feet and casual footwear.',
   },
-  sport: {
-    id: 'sport', handle: 'crossover', name: 'ZipFit Sport', price: '$66', img: 'crossover.webp',
+  crossover: {
+    id: 'crossover', handle: 'crossover', name: 'ZipFit Crossover', price: '$66', img: 'crossover.webp',
     tagline: 'The best of both worlds — moisture-resistant and shock-absorbing. Built for athletic and high-performance use.',
   },
-  active: {
-    id: 'active', handle: 'wander', name: 'ZipFit Active', price: '$99', img: 'wander.webp',
+  legacy: {
+    id: 'legacy', handle: 'legacy', name: 'ZipFit Legacy', price: '$71', img: 'legacy.webp',
+    tagline: 'Tried and trusted for 30+ years. Natural leather breaks in over time for a customized fit in any shoe.',
+  },
+  wander: {
+    id: 'wander', handle: 'wander', name: 'ZipFit Wander', price: '$99', img: 'wander.webp',
     tagline: 'Maximum structure with a self-molding advantage. Built for long days on your feet and rugged footwear.',
   },
 };
 
 const WHY = {
-  'sport-running':   "The ZipFit Sport is built for athletic shoes — EVA cork base delivers responsive energy return and its moisture-resistant top sheet keeps you fresh through every workout.",
-  'sport-high-arch': "High arches need targeted support. The ZipFit Sport's EVA cork base cradles your arch precisely while staying lightweight for active daily use.",
-  'active-work':     "Work boots put serious demands on your feet. The ZipFit Active's self-molding cork composite molds to your exact foot shape and holds up through 10-hour shifts on hard floors.",
-  'active-hike':     "The ZipFit Active is built for the long haul. Self-molding cork composite gives you the most structured support in the lineup — perfect for hiking boots and multi-day adventures.",
-  'classic-sneakers':"For everyday sneakers, the ZipFit Classic is the perfect drop-in. Natural leather top sheet breaks in to your foot's shape over time for a truly personalized fit.",
-  'classic-dress':   "Dress shoes get the ZipFit Classic — slim profile plus a leather top sheet means all-day comfort without any bulk, and it only gets better with wear.",
-  'classic-default': "The ZipFit Classic is our most versatile all-rounder. Natural cork base + leather top sheet delivers genuine all-day comfort in virtually any shoe.",
+  'zippy-flat':
+    "Flat feet do best with gentle, flexible support. The ZipFit Zippy's cork base builds a natural arch without overcorrecting, making it the ideal lightweight upgrade for everyday casual wear.",
+  'zippy-default':
+    "The ZipFit Zippy is our best-value everyday insole. Natural cork cushioning breaks in to your foot and delivers all-day comfort at an accessible price.",
+  'crossover-running':
+    "The ZipFit Crossover is built for athletic shoes — EVA cork base delivers responsive energy return and its moisture-resistant top sheet keeps you fresh through every workout.",
+  'crossover-high-arch':
+    "High arches need targeted support. The ZipFit Crossover's EVA cork base cradles your arch precisely while staying lightweight for active daily use.",
+  'wander-work':
+    "Work boots put serious demands on your feet. The ZipFit Wander's self-molding cork composite molds to your exact foot shape and holds up through 10-hour shifts on hard floors.",
+  'wander-hike':
+    "The ZipFit Wander is built for the long haul. Self-molding cork composite gives you the most structured support in the lineup — perfect for hiking boots and multi-day adventures.",
+  'legacy-sneakers':
+    "For everyday sneakers, the ZipFit Legacy is the perfect drop-in. Natural leather top sheet breaks in to your foot's shape over time for a truly personalized fit.",
+  'legacy-dress':
+    "Dress shoes get the ZipFit Legacy — slim profile plus a leather top sheet means all-day comfort without any bulk, and it only gets better with wear.",
+  'legacy-default':
+    "The ZipFit Legacy is our most versatile all-rounder. Natural cork base + leather top sheet delivers genuine all-day comfort in virtually any shoe.",
 };
 
 const STEPS = [
@@ -843,14 +858,23 @@ let answers = {};
 function recommend() {
   const shoe = answers.shoeType;
   const arch = answers.archType;
-  if (shoe === 'work-boots') return { id:'active', why: WHY['active-work'] };
-  if (shoe === 'hike-boots') return { id:'active', why: WHY['active-hike'] };
-  if (shoe === 'ski-boots')  return { id:'active', why: WHY['active-hike'] };
-  if (shoe === 'running') return { id:'sport', why: WHY['sport-running'] };
-  if (arch === 'high' && (shoe === 'sneakers' || !shoe)) return { id:'sport', why: WHY['sport-high-arch'] };
-  if (shoe === 'dress') return { id:'classic', why: WHY['classic-dress'] };
-  if (shoe === 'sneakers') return { id:'classic', why: WHY['classic-sneakers'] };
-  return { id:'classic', why: WHY['classic-default'] };
+
+  if (shoe === 'work-boots') return { id:'wander',    why: WHY['wander-work'] };
+  if (shoe === 'hike-boots') return { id:'wander',    why: WHY['wander-hike'] };
+  if (shoe === 'ski-boots')  return { id:'wander',    why: WHY['wander-hike'] };
+
+  if (shoe === 'running')    return { id:'crossover', why: WHY['crossover-running'] };
+  if (arch === 'high' && (shoe === 'sneakers' || !shoe))
+                             return { id:'crossover', why: WHY['crossover-high-arch'] };
+
+  if (shoe === 'dress')      return { id:'legacy',    why: WHY['legacy-dress'] };
+
+  if (arch === 'flat' && (shoe === 'sneakers' || !shoe))
+                             return { id:'zippy',     why: WHY['zippy-flat'] };
+
+  if (shoe === 'sneakers')   return { id:'legacy',    why: WHY['legacy-sneakers'] };
+
+  return { id:'legacy', why: WHY['legacy-default'] };
 }
 
 function updateProgress() {
