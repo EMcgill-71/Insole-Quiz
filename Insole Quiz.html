@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Find Your Perfect Insole — ZipFit</title>
+<title>Find Your Perfect ZipFit Insole</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -497,7 +497,7 @@ body{
         <path d="M7 8h10l-7 8h7" stroke="url(#zfqGrad)" stroke-width="2"
               stroke-linecap="round" stroke-linejoin="round"/>
       </svg>
-      ZipFit<sup>®</sup>
+      ZipFit<sup>&#174;</sup>
     </a>
     <button class="zfq-close" id="zfqClose" aria-label="Close quiz">
       <svg viewBox="0 0 16 16"><path d="M2 2l12 12M14 2L2 14"/></svg>
@@ -510,6 +510,7 @@ body{
       <div class="zfq-foot-track-bg"></div>
       <div class="zfq-foot-trail" id="zfqTrail"></div>
       <div class="zfq-foot-walker" id="zfqWalker">
+        <!-- foot/shoe SVG -->
         <svg viewBox="0 0 24 24" aria-hidden="true">
           <path d="M3 17c0-2 2-3 4-3l4-3h3l3 2 4 1c1 0 2 1 2 2v3H3z"/>
           <path d="M10 11V8"/>
@@ -517,7 +518,7 @@ body{
         </svg>
       </div>
     </div>
-    <p class="zfq-progress-label" id="zfqProgressLabel">Let's find your perfect insole</p>
+    <p class="zfq-progress-label" id="zfqProgressLabel">Takes about a minute. Built on 30+ years of ZipFit expertise.</p>
   </div>
 
   <!-- Dynamic quiz body -->
@@ -529,6 +530,7 @@ body{
 <svg width="0" height="0" style="position:absolute;overflow:hidden" aria-hidden="true">
 <defs>
 
+<!-- Arch types -->
 <symbol id="zi-arch-flat" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
   <path d="M3 16h18"/>
   <path d="M4 16c4-.4 8-.4 16 0"/>
@@ -547,6 +549,7 @@ body{
   <circle cx="12" cy="16.5" r=".75" fill="currentColor"/>
 </symbol>
 
+<!-- Pronation -->
 <symbol id="zi-over" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
   <path d="M9 4c0 4-1 7-3 9h12c-2-2-3-5-3-9"/>
   <path d="M6 13c0 3 2 5 6 5s6-2 6-5"/>
@@ -568,6 +571,7 @@ body{
   <circle cx="12" cy="16.5" r=".75" fill="currentColor"/>
 </symbol>
 
+<!-- Pain conditions -->
 <symbol id="zi-foot" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
   <path d="M8 5h8a5 5 0 0 1 5 5v3a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5V10a5 5 0 0 1 5-5z"/>
   <circle cx="10" cy="9" r="1" fill="currentColor"/>
@@ -623,6 +627,7 @@ body{
   <path d="M10 15v4M12 15v4M14 15v4M10 6V4M12 6V3M14 6V4"/>
 </symbol>
 
+<!-- Goals -->
 <symbol id="zi-relief" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
   <path d="M12 22c5.5 0 10-4.5 10-10S17.5 2 12 2 2 6.5 2 12s4.5 10 10 10z"/>
   <path d="M8 14s1.5 2 4 2 4-2 4-2"/>
@@ -656,6 +661,7 @@ body{
   <path d="M10 20v-5h4v5"/>
 </symbol>
 
+<!-- Shoe types -->
 <symbol id="zi-shoe-run" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
   <path d="M3 17c0-2 2-3 4-3l4-3h3l3 2 4 1c1 0 2 1 2 2v2H3z"/>
   <path d="M10 11l1 3M13 12l1 2"/>
@@ -681,11 +687,19 @@ body{
   <path d="M7 7h4M7 10h4"/>
 </symbol>
 
+<!-- UI -->
 <symbol id="zi-arrow-r" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
   <path d="M5 12h14"/><path d="m13 5 7 7-7 7"/>
 </symbol>
 <symbol id="zi-arrow-l" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
   <path d="M19 12H5"/><path d="m11 5-7 7 7 7"/>
+</symbol>
+<symbol id="zi-gift" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+  <polyline points="20 12 20 22 4 22 4 12"/>
+  <rect x="2" y="7" width="20" height="5"/>
+  <line x1="12" y1="22" x2="12" y2="7"/>
+  <path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/>
+  <path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/>
 </symbol>
 <symbol id="zi-reload" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
   <path d="M1 4v6h6"/><path d="M23 20v-6h-6"/>
@@ -732,112 +746,141 @@ body{
    ZipFit Insole Quiz
    ============================================================ */
 
+// ── Helpers ─────────────────────────────────────────────────
 const USE = (id) =>
   `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><use href="#${id}"/></svg>`;
 
+// ── Products ─────────────────────────────────────────────────
 const PRODUCTS = {
   zippy: {
     id: 'zippy', handle: 'zippy', name: 'ZipFit Zippy', price: '$60', img: 'zippy.webp',
-    tagline: 'Our lightest, most accessible cork insole. The perfect everyday upgrade for flat feet and casual footwear.',
+    tagline: 'Built for speed.',
+    desc: 'Our thinnest, most flexible insole — lightweight contoured support with a breathable top sheet for running shoes and ski touring boots.',
+    features: ['Slim & lightweight EVA foam base', 'Moisture-resistant synthetic top sheet', 'Dynamic heel cup'],
+    bestFor: 'Running, Biking, Skiing',
   },
   crossover: {
     id: 'crossover', handle: 'crossover', name: 'ZipFit Crossover', price: '$66', img: 'crossover.webp',
-    tagline: 'The best of both worlds — moisture-resistant and shock-absorbing. Built for athletic and high-performance use.',
+    tagline: 'Multi-sport, zero compromise.',
+    desc: 'Shock-absorbing EVA cork composite paired with a moisture-resistant top sheet — our favorite model for alpine ski boots.',
+    features: ['Shock-absorbing EVA cork base', 'Moisture-resistant synthetic top sheet', 'Dynamic heel cup'],
+    bestFor: 'Alpine Skiing, Running, Golf, Multi-sport',
   },
   legacy: {
     id: 'legacy', handle: 'legacy', name: 'ZipFit Legacy', price: '$71', img: 'legacy.webp',
-    tagline: 'Tried and trusted for 30+ years. Natural leather breaks in over time for a customized fit in any shoe.',
+    tagline: 'From the city block to the ski run.',
+    desc: 'Tried and tested for 30+ years — natural leather top sheet breaks in over time for a custom fit in any shoe.',
+    features: ['EVA cork base', 'Natural leather top sheet that molds to your foot', 'Wide by design, neutral stance'],
+    bestFor: 'Everyday Wear, Hiking, Skiing, Golf',
   },
   wander: {
     id: 'wander', handle: 'wander', name: 'ZipFit Wander', price: '$99', img: 'wander.webp',
-    tagline: 'Maximum structure with a self-molding advantage. Built for long days on your feet and rugged footwear.',
+    tagline: 'For those who move through life at their own pace.',
+    desc: 'Our most structured support — self-molding cork composite built for long hours on your feet and extra durable adventures.',
+    features: ['Self-molding cork composite (most structured)', 'Natural leather top sheet', 'Extra durable, dynamic heel cup'],
+    bestFor: 'Hiking, Trekking, All-day On Your Feet',
   },
 };
 
+// ── Recommendation why-copy ──────────────────────────────────
 const WHY = {
-  'zippy-flat':
-    "Flat feet do best with gentle, flexible support. The ZipFit Zippy's cork base builds a natural arch without overcorrecting, making it the ideal lightweight upgrade for everyday casual wear.",
-  'zippy-default':
-    "The ZipFit Zippy is our best-value everyday insole. Natural cork cushioning breaks in to your foot and delivers all-day comfort at an accessible price.",
-  'crossover-running':
-    "The ZipFit Crossover is built for athletic shoes — EVA cork base delivers responsive energy return and its moisture-resistant top sheet keeps you fresh through every workout.",
+  'zippy-running':
+    "The ZipFit Zippy is our slimmest, most flexible insole — EVA foam base and breathable synthetic top sheet keep you light and fast, with enough structure to protect you over long distances.",
+  'crossover-ski':
+    "The ZipFit Crossover is ZipFit's top pick for alpine ski boots — EVA cork composite absorbs shock and provides control, while the synthetic top sheet handles moisture through every run.",
   'crossover-high-arch':
-    "High arches need targeted support. The ZipFit Crossover's EVA cork base cradles your arch precisely while staying lightweight for active daily use.",
+    "High arches need targeted support. The Crossover's EVA cork base cradles your arch precisely while staying lightweight for active daily use.",
   'wander-work':
-    "Work boots put serious demands on your feet. The ZipFit Wander's self-molding cork composite molds to your exact foot shape and holds up through 10-hour shifts on hard floors.",
+    "Work boots put serious demands on your feet. The Wander's self-molding cork composite forms to your exact foot shape and holds up through 10-hour shifts on hard floors.",
   'wander-hike':
-    "The ZipFit Wander is built for the long haul. Self-molding cork composite gives you the most structured support in the lineup — perfect for hiking boots and multi-day adventures.",
+    "The ZipFit Wander is built for the long haul — self-molding cork composite gives the most structured support in the lineup, perfect for hiking boots and multi-day adventures.",
   'legacy-sneakers':
-    "For everyday sneakers, the ZipFit Legacy is the perfect drop-in. Natural leather top sheet breaks in to your foot's shape over time for a truly personalized fit.",
+    "The ZipFit Legacy is the perfect everyday drop-in. Natural leather top sheet breaks in to your foot's shape over time for a truly personalized fit — no slipping, no blisters.",
   'legacy-dress':
     "Dress shoes get the ZipFit Legacy — slim profile plus a leather top sheet means all-day comfort without any bulk, and it only gets better with wear.",
   'legacy-default':
-    "The ZipFit Legacy is our most versatile all-rounder. Natural cork base + leather top sheet delivers genuine all-day comfort in virtually any shoe.",
+    "The ZipFit Legacy is our most versatile all-rounder, tried and tested for 30+ years. Natural cork base and leather top sheet delivers genuine all-day comfort in virtually any shoe.",
 };
 
+// ── Quiz steps ───────────────────────────────────────────────
 const STEPS = [
   {
-    id: 'arch', key: 'archType', label: 'Step 1 of 5',
+    id: 'arch',
+    key: 'archType',
+    label: 'Step 1 of 5',
     q: 'What kind of arch do you have?',
-    type: 'single', layout: 'g2',
+    type: 'single',
+    layout: 'g2',
     opts: [
-      { val:'flat',    icon:'zi-arch-flat',    label:'Flat / Low arch',  desc:'Arch nearly touches the ground' },
-      { val:'neutral', icon:'zi-arch-neutral', label:'Neutral arch',     desc:'Normal height, visible arch' },
-      { val:'high',    icon:'zi-arch-high',    label:'High arch',        desc:'Pronounced, raised arch' },
-      { val:'unsure',  icon:'zi-arch-unsure',  label:"I'm not sure",    desc:'' },
+      { val:'flat',    icon:'zi-arch-flat',    label:'Flat / Low arch',   desc:'Arch nearly touches the ground' },
+      { val:'neutral', icon:'zi-arch-neutral', label:'Neutral arch',      desc:'Normal height, visible arch' },
+      { val:'high',    icon:'zi-arch-high',    label:'High arch',         desc:'Pronounced, raised arch' },
+      { val:'unsure',  icon:'zi-arch-unsure',  label:"I'm not sure",     desc:'' },
     ],
   },
   {
-    id: 'pronation', key: 'pronation', label: 'Step 2 of 5',
+    id: 'pronation',
+    key: 'pronation',
+    label: 'Step 2 of 5',
     q: 'How does your foot move when you walk or run?',
-    type: 'single', layout: 'g1 list',
+    type: 'single',
+    layout: 'g1 list',
     opts: [
-      { val:'over',    icon:'zi-over',         label:'I overpronate',     desc:'Foot rolls inward' },
-      { val:'sup',     icon:'zi-sup',          label:'I supinate',        desc:'Foot rolls outward' },
-      { val:'neither', icon:'zi-neutral-walk', label:'Neither / Neutral', desc:'Normal gait' },
-      { val:'unsure',  icon:'zi-help',         label:"I don't know",     desc:'' },
+      { val:'over',    icon:'zi-over',          label:'I overpronate',    desc:'Foot rolls inward' },
+      { val:'sup',     icon:'zi-sup',           label:'I supinate',       desc:'Foot rolls outward' },
+      { val:'neither', icon:'zi-neutral-walk',  label:'Neither / Neutral', desc:'Normal gait' },
+      { val:'unsure',  icon:'zi-help',          label:"I don't know",    desc:'' },
     ],
   },
   {
-    id: 'pain', key: 'painConditions', label: 'Step 3 of 5',
+    id: 'pain',
+    key: 'painConditions',
+    label: 'Step 3 of 5',
     q: 'Which of these are you looking to relieve?',
     sub: 'Select all that apply',
-    type: 'multi', layout: 'g3',
+    type: 'multi',
+    layout: 'g3',
     opts: [
-      { val:'foot-pain',  icon:'zi-foot',      label:'Foot pain' },
-      { val:'ankle-pain', icon:'zi-ankle',     label:'Ankle pain' },
-      { val:'back-pain',  icon:'zi-back',      label:'Back pain' },
-      { val:'knee-pain',  icon:'zi-knee',      label:'Knee pain' },
-      { val:'plantar',    icon:'zi-plantar',   label:'Plantar fasciitis' },
-      { val:'flat-feet',  icon:'zi-flatfeet',  label:'Flat feet' },
-      { val:'pron-pain',  icon:'zi-pron',      label:'Overpronation' },
-      { val:'tendinitis', icon:'zi-tendon',    label:'Tendinitis' },
-      { val:'bunions',    icon:'zi-bunion',    label:'Bunions' },
-      { val:'hamstring',  icon:'zi-hamstring', label:'Hamstring pain' },
-      { val:'morton',     icon:'zi-morton',    label:"Morton's neuroma" },
-      { val:'meta',       icon:'zi-meta',      label:'Metatarsalgia' },
-      { val:'none',       icon:'zi-relief',    label:'No major issues' },
+      { val:'foot-pain',  icon:'zi-foot',     label:'Foot pain' },
+      { val:'ankle-pain', icon:'zi-ankle',    label:'Ankle pain' },
+      { val:'back-pain',  icon:'zi-back',     label:'Back pain' },
+      { val:'knee-pain',  icon:'zi-knee',     label:'Knee pain' },
+      { val:'plantar',    icon:'zi-plantar',  label:'Plantar fasciitis' },
+      { val:'flat-feet',  icon:'zi-flatfeet', label:'Flat feet' },
+      { val:'pron-pain',  icon:'zi-pron',     label:'Overpronation' },
+      { val:'tendinitis', icon:'zi-tendon',   label:'Tendinitis' },
+      { val:'bunions',    icon:'zi-bunion',   label:'Bunions' },
+      { val:'hamstring',  icon:'zi-hamstring',label:'Hamstring pain' },
+      { val:'morton',     icon:'zi-morton',   label:"Morton's neuroma" },
+      { val:'meta',       icon:'zi-meta',     label:'Metatarsalgia' },
+      { val:'none',       icon:'zi-relief',   label:'No major issues' },
     ],
   },
   {
-    id: 'goals', key: 'goals', label: 'Step 4 of 5',
+    id: 'goals',
+    key: 'goals',
+    label: 'Step 4 of 5',
     q: 'What are you hoping to achieve with ZipFit insoles?',
     sub: 'Select all that apply',
-    type: 'multi', layout: 'g1 list',
+    type: 'multi',
+    layout: 'g1 list',
     opts: [
-      { val:'pain-relief', icon:'zi-relief',   label:'Pain relief' },
-      { val:'posture',     icon:'zi-posture',  label:'Improved posture' },
-      { val:'comfort',     icon:'zi-comfort',  label:'Wearing shoes that are otherwise too uncomfortable' },
-      { val:'shoe-life',   icon:'zi-shoelife', label:'Extending the life of my shoes' },
-      { val:'active',      icon:'zi-run',      label:'Being more active / exercising more' },
-      { val:'save',        icon:'zi-money',    label:'Saving money on doctors / physical therapy' },
-      { val:'orthotics',   icon:'zi-ortho',    label:'Alternative to custom orthotics' },
+      { val:'pain-relief', icon:'zi-relief',  label:'Pain relief' },
+      { val:'posture',     icon:'zi-posture', label:'Improved posture' },
+      { val:'comfort',     icon:'zi-comfort', label:'Wearing shoes that are otherwise too uncomfortable' },
+      { val:'shoe-life',   icon:'zi-shoelife',label:'Extending the life of my shoes' },
+      { val:'active',      icon:'zi-run',     label:'Being more active / exercising more' },
+      { val:'save',        icon:'zi-money',   label:'Saving money on doctors / physical therapy' },
+      { val:'orthotics',   icon:'zi-ortho',   label:'Alternative to custom orthotics' },
     ],
   },
   {
-    id: 'shoe', key: 'shoeType', label: 'Step 5 of 5',
+    id: 'shoe',
+    key: 'shoeType',
+    label: 'Step 5 of 5',
     q: 'What type of shoes will you primarily use these in?',
-    type: 'single', layout: 'g2',
+    type: 'single',
+    layout: 'g2',
     opts: [
       { val:'running',    icon:'zi-shoe-run',   label:'Running / Athletic', desc:'Road, gym, or sport shoes' },
       { val:'sneakers',   icon:'zi-shoe-sneak', label:'Sneakers / Casual',  desc:'Everyday streetwear' },
@@ -849,34 +892,41 @@ const STEPS = [
   },
 ];
 
+// Result immediately follows the last question step
 const RESULT_STEP = STEPS.length;
-const TOTAL = RESULT_STEP;
+const TOTAL = RESULT_STEP; // used for progress pct
 
+// ── State ────────────────────────────────────────────────────
 let step = 0;
 let answers = {};
 
+// ── Recommendation logic ─────────────────────────────────────
 function recommend() {
   const shoe = answers.shoeType;
   const arch = answers.archType;
 
+  // Hiking / work → Wander (most structured)
   if (shoe === 'work-boots') return { id:'wander',    why: WHY['wander-work'] };
   if (shoe === 'hike-boots') return { id:'wander',    why: WHY['wander-hike'] };
-  if (shoe === 'ski-boots')  return { id:'wander',    why: WHY['wander-hike'] };
 
-  if (shoe === 'running')    return { id:'crossover', why: WHY['crossover-running'] };
+  // Alpine ski / multi-sport → Crossover
+  if (shoe === 'ski-boots')  return { id:'crossover', why: WHY['crossover-ski'] };
+
+  // Running → Zippy
+  if (shoe === 'running')    return { id:'zippy',     why: WHY['zippy-running'] };
+
+  // High arch + active → Crossover
   if (arch === 'high' && (shoe === 'sneakers' || !shoe))
                              return { id:'crossover', why: WHY['crossover-high-arch'] };
 
+  // Dress / everyday / default → Legacy
   if (shoe === 'dress')      return { id:'legacy',    why: WHY['legacy-dress'] };
-
-  if (arch === 'flat' && (shoe === 'sneakers' || !shoe))
-                             return { id:'zippy',     why: WHY['zippy-flat'] };
-
   if (shoe === 'sneakers')   return { id:'legacy',    why: WHY['legacy-sneakers'] };
 
   return { id:'legacy', why: WHY['legacy-default'] };
 }
 
+// ── Progress ──────────────────────────────────────────────────
 function updateProgress() {
   const pct = step >= TOTAL ? 100 : Math.round((step / TOTAL) * 100);
   const trail  = document.getElementById('zfqTrail');
@@ -885,19 +935,21 @@ function updateProgress() {
   if (trail)  trail.style.width = pct + '%';
   if (walker) walker.style.left = Math.min(pct, 96) + '%';
   if (label) {
-    if (step === 0)         label.textContent = "Let's find your perfect insole";
-    else if (step >= TOTAL) label.textContent = 'Your recommendation is ready!';
-    else                    label.textContent = pct + '% complete';
+    if (step === 0)           label.textContent = "Takes about a minute. Built on 30+ years of ZipFit expertise.";
+    else if (step >= TOTAL)   label.textContent = 'Your recommendation is ready!';
+    else                      label.textContent = pct + '% complete';
   }
 }
 
+// ── Render dispatcher ────────────────────────────────────────
 function render() {
   updateProgress();
   const body = document.getElementById('zfqBody');
-  if (step >= RESULT_STEP) { renderResult(body); return; }
+  if (step >= RESULT_STEP)  { renderResult(body); return; }
   renderQuestion(body, STEPS[step]);
 }
 
+// ── Question step ────────────────────────────────────────────
 function renderQuestion(body, s) {
   const isMulti = s.type === 'multi';
   const isList  = s.layout.includes('list');
@@ -915,8 +967,8 @@ function renderQuestion(body, s) {
       </button>`;
   }).join('');
 
-  const hasNext = isMulti;
-  const nextDis = isMulti && sel.length === 0 ? 'disabled' : '';
+  const hasNext  = isMulti;
+  const nextDis  = isMulti && sel.length === 0 ? 'disabled' : '';
 
   body.innerHTML = `
     <div class="zfq-step-wrap">
@@ -940,6 +992,7 @@ function renderQuestion(body, s) {
 function onOption(card, s) {
   const val     = card.dataset.val;
   const isMulti = s.type === 'multi';
+
   if (isMulti) {
     if (!answers[s.key]) answers[s.key] = [];
     const arr = answers[s.key];
@@ -956,27 +1009,30 @@ function onOption(card, s) {
   }
 }
 
+// ── Pain conditions → benefit copy ──────────────────────────
 const PAIN_COPY = {
-  'foot-pain':  "Foot pain — ZipFit's cork base absorbs impact and distributes pressure evenly across the whole foot.",
-  'ankle-pain': "Ankle pain — proper arch support from ZipFit reduces the lateral stress that strains ankle tendons.",
-  'back-pain':  "Back pain — correcting foot alignment at the ground up relieves the chain of tension that travels into your lower back.",
-  'knee-pain':  "Knee pain — a stabilised foot strike reduces the rotational stress that transfers to the knee joint.",
-  'plantar':    "Plantar fasciitis — ZipFit's arch support takes pressure off the plantar fascia so it can heal and stop hurting.",
-  'flat-feet':  "Flat feet — the cork base creates a supportive arch that flat feet lack, redistributing load naturally.",
-  'pron-pain':  "Overpronation — ZipFit's medial arch support guides the foot back to a neutral gait pattern.",
-  'tendinitis': "Tendinitis — shock absorption and stable alignment reduce the repetitive stress that inflames tendons.",
-  'bunions':    "Bunions — correct foot positioning reduces the pressure on the first metatarsal joint that worsens bunions.",
-  'hamstring':  "Hamstring pain — leg-length discrepancies and poor foot mechanics can pull the hamstring; proper insoles restore balance.",
-  'morton':     "Morton's neuroma — metatarsal support spreads the forefoot and relieves the nerve compression behind the toes.",
-  'meta':       "Metatarsalgia — a supportive insole shifts load away from the ball of the foot, easing forefoot pain.",
+  'foot-pain':   'Foot pain — ZipFit\'s cork base absorbs impact and distributes pressure evenly across the whole foot.',
+  'ankle-pain':  'Ankle pain — proper arch support from ZipFit reduces the lateral stress that strains ankle tendons.',
+  'back-pain':   'Back pain — correcting foot alignment at the ground up relieves the chain of tension that travels into your lower back.',
+  'knee-pain':   'Knee pain — a stabilised foot strike reduces the rotational stress that transfers to the knee joint.',
+  'plantar':     'Plantar fasciitis — ZipFit\'s arch support takes pressure off the plantar fascia so it can heal and stop hurting.',
+  'flat-feet':   'Flat feet — the cork base creates a supportive arch that flat feet lack, redistributing load naturally.',
+  'pron-pain':   'Overpronation — ZipFit\'s medial arch support guides the foot back to a neutral gait pattern.',
+  'tendinitis':  'Tendinitis — shock absorption and stable alignment reduce the repetitive stress that inflames tendons.',
+  'bunions':     'Bunions — correct foot positioning reduces the pressure on the first metatarsal joint that worsens bunions.',
+  'hamstring':   'Hamstring pain — leg-length discrepancies and poor foot mechanics can pull the hamstring; proper insoles restore balance.',
+  'morton':      'Morton\'s neuroma — metatarsal support spreads the forefoot and relieves the nerve compression behind the toes.',
+  'meta':        'Metatarsalgia — a supportive insole shifts load away from the ball of the foot, easing forefoot pain.',
 };
 
+// ── Result step ──────────────────────────────────────────────
 function renderResult(body) {
   const { id, why } = recommend();
   const p = PRODUCTS[id];
   const base = window.SHOPIFY_BASE_URL || 'https://zipfit.com';
   const url  = `${base}/products/${p.handle}`;
 
+  // Build pain callout (skip 'none')
   const pains = (answers.painConditions || []).filter(v => v !== 'none');
   const painHtml = pains.length > 0 ? `
     <div style="margin-bottom:16px;border:1.5px solid #f0e8e4;border-radius:10px;overflow:hidden">
@@ -999,24 +1055,12 @@ function renderResult(body) {
         <div class="zfq-prod-body">
           <p class="zfq-prod-tag">ZipFit Insoles · Made in Italy</p>
           <h3 class="zfq-prod-name">${p.name}</h3>
-          <p class="zfq-prod-desc">${p.tagline}</p>
-          <div class="zfq-features">
-            <div class="zfq-feat">
-              <span class="zfq-feat-icon">${USE('zi-heel-cup')}</span>
-              <span class="zfq-feat-label">Deep Heel Cup</span>
-              <span class="zfq-feat-sub">Cradles & stabilises your heel</span>
-            </div>
-            <div class="zfq-feat">
-              <span class="zfq-feat-icon">${USE('zi-cork-shock')}</span>
-              <span class="zfq-feat-label">Shock Absorbing Cork</span>
-              <span class="zfq-feat-sub">Natural energy return</span>
-            </div>
-            <div class="zfq-feat">
-              <span class="zfq-feat-icon">${USE('zi-channel')}</span>
-              <span class="zfq-feat-label">Arch Channel</span>
-              <span class="zfq-feat-sub">Guides neutral foot stance</span>
-            </div>
-          </div>
+          <p style="font-size:15px;font-weight:600;color:#EF4623;margin:0 0 8px;line-height:1.3">${p.tagline}</p>
+          <p class="zfq-prod-desc">${p.desc}</p>
+          <ul style="margin:0 0 12px;padding:0;list-style:none;display:flex;flex-direction:column;gap:6px">
+            ${p.features.map(f => `<li style="font-size:13px;color:#444;line-height:1.45;padding-left:18px;position:relative"><span style="position:absolute;left:0;color:#EF4623;font-weight:700">&#10003;</span>${f}</li>`).join('')}
+          </ul>
+          <p style="font-size:12px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;margin:0 0 14px;color:#888"><span style="color:#1a1a1a">Best for:</span> ${p.bestFor}</p>
           ${painHtml}
           <div class="zfq-prod-why">
             <p class="zfq-prod-why-lbl">Why the ${p.name.replace('ZipFit ','')}</p>
@@ -1038,8 +1082,8 @@ function renderResult(body) {
       </div>
       <div class="zfq-trust">
         <div class="zfq-trust-item">${USE('zi-italy')}<span>Made in Italy</span></div>
-        <div class="zfq-trust-item">${USE('zi-clock')}<span>Since 1989</span></div>
-        <div class="zfq-trust-item">${USE('zi-leaf')}<span>Cork Insoles</span></div>
+        <div class="zfq-trust-item">${USE('zi-clock')}<span>30+ Years Expertise</span></div>
+        <div class="zfq-trust-item">${USE('zi-leaf')}<span>Drop-In Replaceable</span></div>
       </div>
     </div>`;
 
@@ -1050,15 +1094,18 @@ function renderResult(body) {
     step = RESULT_STEP - 1; render();
   });
 
+  // Analytics hook
   document.dispatchEvent(new CustomEvent('zf:recommend', {
     detail: { product: p.handle, answers: { ...answers } }
   }));
 }
 
+// ── Boot ─────────────────────────────────────────────────────
 document.getElementById('zfqClose').addEventListener('click', () => {
   if (window.parent && window.parent !== window) {
     window.parent.postMessage({ type: 'zf:quiz:close' }, '*');
   }
+  // Fallback: reset quiz to start
   answers = {}; step = 0; render();
 });
 
