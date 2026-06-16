@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Find Your Perfect Insole — ZipFit</title>
+<title>Find Your Perfect ZipFit Insole</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -518,7 +518,7 @@ body{
         </svg>
       </div>
     </div>
-    <p class="zfq-progress-label" id="zfqProgressLabel">Let's find your perfect insole</p>
+    <p class="zfq-progress-label" id="zfqProgressLabel">Takes about a minute. Built on 30+ years of ZipFit expertise.</p>
   </div>
 
   <!-- Dynamic quiz body -->
@@ -753,59 +753,53 @@ const USE = (id) =>
 // ── Products ─────────────────────────────────────────────────
 const PRODUCTS = {
   zippy: {
-    id: 'zippy',
-    handle: 'zippy',
-    name: 'ZipFit Zippy',
-    price: '$60',
-    img: 'zippy.webp',
-    tagline: 'Our lightest, most accessible cork insole. The perfect everyday upgrade for flat feet and casual footwear.',
+    id: 'zippy', handle: 'zippy', name: 'ZipFit Zippy', price: '$60', img: 'zippy.webp',
+    tagline: 'Built for speed.',
+    desc: 'Our thinnest, most flexible insole — lightweight contoured support with a breathable top sheet for running shoes and ski touring boots.',
+    features: ['Slim & lightweight EVA foam base', 'Moisture-resistant synthetic top sheet', 'Dynamic heel cup'],
+    bestFor: 'Running, Biking, Skiing',
   },
   crossover: {
-    id: 'crossover',
-    handle: 'crossover',
-    name: 'ZipFit Crossover',
-    price: '$66',
-    img: 'crossover.webp',
-    tagline: 'The best of both worlds — moisture-resistant and shock-absorbing. Built for athletic and high-performance use.',
+    id: 'crossover', handle: 'crossover', name: 'ZipFit Crossover', price: '$66', img: 'crossover.webp',
+    tagline: 'Multi-sport, zero compromise.',
+    desc: 'Shock-absorbing EVA cork composite paired with a moisture-resistant top sheet — our favorite model for alpine ski boots.',
+    features: ['Shock-absorbing EVA cork base', 'Moisture-resistant synthetic top sheet', 'Dynamic heel cup'],
+    bestFor: 'Alpine Skiing, Running, Golf, Multi-sport',
   },
   legacy: {
-    id: 'legacy',
-    handle: 'legacy',
-    name: 'ZipFit Legacy',
-    price: '$71',
-    img: 'legacy.webp',
-    tagline: 'Tried and trusted for 30+ years. Natural leather breaks in over time for a customized fit in any shoe.',
+    id: 'legacy', handle: 'legacy', name: 'ZipFit Legacy', price: '$71', img: 'legacy.webp',
+    tagline: 'From the city block to the ski run.',
+    desc: 'Tried and tested for 30+ years — natural leather top sheet breaks in over time for a custom fit in any shoe.',
+    features: ['EVA cork base', 'Natural leather top sheet that molds to your foot', 'Wide by design, neutral stance'],
+    bestFor: 'Everyday Wear, Hiking, Skiing, Golf',
   },
   wander: {
-    id: 'wander',
-    handle: 'wander',
-    name: 'ZipFit Wander',
-    price: '$99',
-    img: 'wander.webp',
-    tagline: 'Maximum structure with a self-molding advantage. Built for long days on your feet and rugged footwear.',
+    id: 'wander', handle: 'wander', name: 'ZipFit Wander', price: '$99', img: 'wander.webp',
+    tagline: 'For those who move through life at their own pace.',
+    desc: 'Our most structured support — self-molding cork composite built for long hours on your feet and extra durable adventures.',
+    features: ['Self-molding cork composite (most structured)', 'Natural leather top sheet', 'Extra durable, dynamic heel cup'],
+    bestFor: 'Hiking, Trekking, All-day On Your Feet',
   },
 };
 
 // ── Recommendation why-copy ──────────────────────────────────
 const WHY = {
-  'zippy-flat':
-    "Flat feet do best with gentle, flexible support. The ZipFit Zippy's cork base builds a natural arch without overcorrecting, making it the ideal lightweight upgrade for everyday casual wear.",
-  'zippy-default':
-    "The ZipFit Zippy is our best-value everyday insole. Natural cork cushioning breaks in to your foot and delivers all-day comfort at an accessible price.",
-  'crossover-running':
-    "The ZipFit Crossover is built for athletic shoes — EVA cork base delivers responsive energy return and its moisture-resistant top sheet keeps you fresh through every workout.",
+  'zippy-running':
+    "The ZipFit Zippy is our slimmest, most flexible insole — EVA foam base and breathable synthetic top sheet keep you light and fast, with enough structure to protect you over long distances.",
+  'crossover-ski':
+    "The ZipFit Crossover is ZipFit's top pick for alpine ski boots — EVA cork composite absorbs shock and provides control, while the synthetic top sheet handles moisture through every run.",
   'crossover-high-arch':
-    "High arches need targeted support. The ZipFit Crossover's EVA cork base cradles your arch precisely while staying lightweight for active daily use.",
+    "High arches need targeted support. The Crossover's EVA cork base cradles your arch precisely while staying lightweight for active daily use.",
   'wander-work':
-    "Work boots put serious demands on your feet. The ZipFit Wander's self-molding cork composite molds to your exact foot shape and holds up through 10-hour shifts on hard floors.",
+    "Work boots put serious demands on your feet. The Wander's self-molding cork composite forms to your exact foot shape and holds up through 10-hour shifts on hard floors.",
   'wander-hike':
-    "The ZipFit Wander is built for the long haul. Self-molding cork composite gives you the most structured support in the lineup — perfect for hiking boots and multi-day adventures.",
+    "The ZipFit Wander is built for the long haul — self-molding cork composite gives the most structured support in the lineup, perfect for hiking boots and multi-day adventures.",
   'legacy-sneakers':
-    "For everyday sneakers, the ZipFit Legacy is the perfect drop-in. Natural leather top sheet breaks in to your foot's shape over time for a truly personalized fit.",
+    "The ZipFit Legacy is the perfect everyday drop-in. Natural leather top sheet breaks in to your foot's shape over time for a truly personalized fit — no slipping, no blisters.",
   'legacy-dress':
     "Dress shoes get the ZipFit Legacy — slim profile plus a leather top sheet means all-day comfort without any bulk, and it only gets better with wear.",
   'legacy-default':
-    "The ZipFit Legacy is our most versatile all-rounder. Natural cork base + leather top sheet delivers genuine all-day comfort in virtually any shoe.",
+    "The ZipFit Legacy is our most versatile all-rounder, tried and tested for 30+ years. Natural cork base and leather top sheet delivers genuine all-day comfort in virtually any shoe.",
 };
 
 // ── Quiz steps ───────────────────────────────────────────────
@@ -911,20 +905,23 @@ function recommend() {
   const shoe = answers.shoeType;
   const arch = answers.archType;
 
-  if (shoe === 'work-boots') return { id:'wander', why: WHY['wander-work'] };
-  if (shoe === 'hike-boots') return { id:'wander', why: WHY['wander-hike'] };
-  if (shoe === 'ski-boots')  return { id:'wander', why: WHY['wander-hike'] };
+  // Hiking / work → Wander (most structured)
+  if (shoe === 'work-boots') return { id:'wander',    why: WHY['wander-work'] };
+  if (shoe === 'hike-boots') return { id:'wander',    why: WHY['wander-hike'] };
 
-  if (shoe === 'running') return { id:'crossover', why: WHY['crossover-running'] };
+  // Alpine ski / multi-sport → Crossover
+  if (shoe === 'ski-boots')  return { id:'crossover', why: WHY['crossover-ski'] };
+
+  // Running → Zippy
+  if (shoe === 'running')    return { id:'zippy',     why: WHY['zippy-running'] };
+
+  // High arch + active → Crossover
   if (arch === 'high' && (shoe === 'sneakers' || !shoe))
-    return { id:'crossover', why: WHY['crossover-high-arch'] };
+                             return { id:'crossover', why: WHY['crossover-high-arch'] };
 
-  if (shoe === 'dress') return { id:'legacy', why: WHY['legacy-dress'] };
-
-  if (arch === 'flat' && shoe === 'sneakers') return { id:'zippy', why: WHY['zippy-flat'] };
-  if (arch === 'flat' && !shoe)               return { id:'zippy', why: WHY['zippy-flat'] };
-
-  if (shoe === 'sneakers') return { id:'legacy', why: WHY['legacy-sneakers'] };
+  // Dress / everyday / default → Legacy
+  if (shoe === 'dress')      return { id:'legacy',    why: WHY['legacy-dress'] };
+  if (shoe === 'sneakers')   return { id:'legacy',    why: WHY['legacy-sneakers'] };
 
   return { id:'legacy', why: WHY['legacy-default'] };
 }
@@ -938,7 +935,7 @@ function updateProgress() {
   if (trail)  trail.style.width = pct + '%';
   if (walker) walker.style.left = Math.min(pct, 96) + '%';
   if (label) {
-    if (step === 0)           label.textContent = "Let's find your perfect insole";
+    if (step === 0)           label.textContent = "Takes about a minute. Built on 30+ years of ZipFit expertise.";
     else if (step >= TOTAL)   label.textContent = 'Your recommendation is ready!';
     else                      label.textContent = pct + '% complete';
   }
@@ -1058,24 +1055,12 @@ function renderResult(body) {
         <div class="zfq-prod-body">
           <p class="zfq-prod-tag">ZipFit Insoles · Made in Italy</p>
           <h3 class="zfq-prod-name">${p.name}</h3>
-          <p class="zfq-prod-desc">${p.tagline}</p>
-          <div class="zfq-features">
-            <div class="zfq-feat">
-              <span class="zfq-feat-icon">${USE('zi-heel-cup')}</span>
-              <span class="zfq-feat-label">Deep Heel Cup</span>
-              <span class="zfq-feat-sub">Cradles & stabilises your heel</span>
-            </div>
-            <div class="zfq-feat">
-              <span class="zfq-feat-icon">${USE('zi-cork-shock')}</span>
-              <span class="zfq-feat-label">Shock Absorbing Cork</span>
-              <span class="zfq-feat-sub">Natural energy return</span>
-            </div>
-            <div class="zfq-feat">
-              <span class="zfq-feat-icon">${USE('zi-channel')}</span>
-              <span class="zfq-feat-label">Arch Channel</span>
-              <span class="zfq-feat-sub">Guides neutral foot stance</span>
-            </div>
-          </div>
+          <p style="font-size:15px;font-weight:600;color:#EF4623;margin:0 0 8px;line-height:1.3">${p.tagline}</p>
+          <p class="zfq-prod-desc">${p.desc}</p>
+          <ul style="margin:0 0 12px;padding:0;list-style:none;display:flex;flex-direction:column;gap:6px">
+            ${p.features.map(f => `<li style="font-size:13px;color:#444;line-height:1.45;padding-left:18px;position:relative"><span style="position:absolute;left:0;color:#EF4623;font-weight:700">✓</span>${f}</li>`).join('')}
+          </ul>
+          <p style="font-size:12px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;margin:0 0 14px;color:#888"><span style="color:#1a1a1a">Best for:</span> ${p.bestFor}</p>
           ${painHtml}
           <div class="zfq-prod-why">
             <p class="zfq-prod-why-lbl">Why the ${p.name.replace('ZipFit ','')}</p>
@@ -1097,8 +1082,8 @@ function renderResult(body) {
       </div>
       <div class="zfq-trust">
         <div class="zfq-trust-item">${USE('zi-italy')}<span>Made in Italy</span></div>
-        <div class="zfq-trust-item">${USE('zi-clock')}<span>Since 1989</span></div>
-        <div class="zfq-trust-item">${USE('zi-leaf')}<span>Cork Insoles</span></div>
+        <div class="zfq-trust-item">${USE('zi-clock')}<span>30+ Years Expertise</span></div>
+        <div class="zfq-trust-item">${USE('zi-leaf')}<span>Drop-In Replaceable</span></div>
       </div>
     </div>`;
 
