@@ -67,24 +67,25 @@ body{
 }
 .zfq-logo{
   display:flex;
-  align-items:center;
-  gap:10px;
-  font-weight:800;
-  font-size:18px;
-  letter-spacing:-0.4px;
-  color:#1a1a1a;
+  flex-direction:column;
+  align-items:flex-start;
+  gap:3px;
   text-decoration:none;
 }
-.zfq-logo-text{display:flex;flex-direction:column;gap:1px}
+.zfq-logo-img{
+  display:block;
+  height:26px;
+  width:auto;
+}
 .zfq-logo-tagline{
   font-size:9px;
   font-weight:600;
-  letter-spacing:.15em;
+  letter-spacing:.18em;
   text-transform:uppercase;
-  color:#aaa;
+  color:#999;
   line-height:1;
+  padding-left:2px;
 }
-.zfq-logo sup{font-size:10px;vertical-align:super}
 .zfq-close{
   margin-left:auto;
   background:none;
@@ -497,22 +498,9 @@ body{
 
   <!-- Top bar -->
   <header class="zfq-topbar">
-    <a class="zfq-logo" href="/" aria-label="ZipFit home">
-      <svg width="32" height="32" viewBox="0 0 28 28" fill="none" aria-hidden="true">
-        <defs>
-          <linearGradient id="zfqGrad" x1="0" y1="0" x2="28" y2="0" gradientUnits="userSpaceOnUse">
-            <stop offset="0%"   stop-color="#EF4623"/>
-            <stop offset="20%"  stop-color="#FBCF21"/>
-            <stop offset="40%"  stop-color="#68BD46"/>
-            <stop offset="60%"  stop-color="#5DC7D1"/>
-            <stop offset="80%"  stop-color="#2F438F"/>
-            <stop offset="100%" stop-color="#952A7D"/>
-          </linearGradient>
-        </defs>
-        <path d="M4 7.5h20L6 20.5h18" stroke="url(#zfqGrad)" stroke-width="3.5"
-              stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-      <span class="zfq-logo-text">ZipFit<sup>®</sup><span class="zfq-logo-tagline">We Know Feet</span></span>
+    <a class="zfq-logo" href="/" aria-label="ZipFit — We Know Feet">
+      <img class="zfq-logo-img" src="zipfit-logo.png" alt="ZipFit" width="720" height="130">
+      <span class="zfq-logo-tagline">We Know Feet</span>
     </a>
     <button class="zfq-close" id="zfqClose" aria-label="Close quiz">
       <svg viewBox="0 0 16 16"><path d="M2 2l12 12M14 2L2 14"/></svg>
